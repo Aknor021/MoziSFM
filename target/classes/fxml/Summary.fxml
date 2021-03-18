@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.SummaryController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0">
+         <children>
+            <Label layoutX="100.0" layoutY="70.0" text="Összegzés">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Button layoutX="64.0" layoutY="618.0" mnemonicParsing="false" onAction="#BackButtonPushed" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
+            <Button layoutX="940.0" layoutY="618.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="26.0" prefWidth="240.0" text="Elfogdás" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="40.0" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
