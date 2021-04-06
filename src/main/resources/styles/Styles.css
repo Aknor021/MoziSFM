@@ -1,7 +1,16 @@
 .button {
     -fx-font-weight: bold;
     -fx-background-color: #F5821E;
-    -fx-font-size: 12;
+    -fx-font-size: 15;
+    -fx-background-radius: 50, 50;
+    -fx-text-fill: black;
+}
+.menubutton {
+    -fx-font-weight: bold;
+    -fx-background-color: #F5821E;
+    -fx-font-size: 18;
+    -fx-background-radius: 50, 50;
+    -fx-text-fill: black;
 }
 *{
     -fx-base: #602021;
