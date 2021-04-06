@@ -25,7 +25,7 @@
                   <Button contentDisplay="RIGHT" layoutX="458.0" layoutY="301.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="0.0" prefWidth="140.0" style="-fx-background-color: F5821E;" text="Film kiválasztása" />
                   <ImageView fitHeight="303.0" fitWidth="200.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/Free%20Guy.jpg" />
+                        <Image url="@../images/Free Guy.jpg" />
                      </image>
                   </ImageView>
                </children></Pane>
