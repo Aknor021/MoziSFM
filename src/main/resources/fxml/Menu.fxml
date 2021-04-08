@@ -14,7 +14,7 @@
                   <Font size="42.0" />
                </font>
             </Label>
-            <Button fx:id="ChangeScenePushed" layoutX="383.0" layoutY="303.0" mnemonicParsing="false" onAction="#ChangeScenePushed" prefHeight="0.0" prefWidth="312.0" styleClass="menubutton" text="Tovább a film kiválasztásához" AnchorPane.leftAnchor="383.0" AnchorPane.rightAnchor="383.0" AnchorPane.topAnchor="300.0">
+            <Button fx:id="ChangeScenePushed" layoutX="383.0" layoutY="303.0" mnemonicParsing="false" onAction="#ChangeScenePushed" prefHeight="54.0" prefWidth="312.0" styleClass="menubutton" text="Tovább a film kiválasztásához" AnchorPane.leftAnchor="383.0" AnchorPane.rightAnchor="383.0" AnchorPane.topAnchor="300.0">
                <font>
                   <Font size="16.0" />
                </font></Button>

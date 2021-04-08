@@ -15,11 +15,18 @@
                </font>
             </Label>
             <Button layoutX="71.0" layoutY="638.0" mnemonicParsing="false" onAction="#BackButtonPushed" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
-            <Button layoutX="810.0" layoutY="638.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="26.0" prefWidth="240.0" text="Tovább az ülőhely kiválasztására" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="40.0" />
              <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@../images/71+ncdWcmRL.png" />
                </image></ImageView>
+            <DatePicker layoutX="149.0" layoutY="224.0" prefHeight="50.0" prefWidth="260.0" showWeekNumbers="true" />
+            <Button layoutX="621.0" layoutY="221.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="10:00 - 12:30 ">
+               <font>
+                  <Font size="22.0" />
+               </font></Button>
+            <Button layoutX="621.0" layoutY="312.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="13:00 - 14:30" />
+            <Button layoutX="621.0" layoutY="403.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="15:00 - 16:30" />
+            <Button layoutX="621.0" layoutY="491.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="17:00 - 18:30" />
          </children></AnchorPane>
   </content>
 </ScrollPane>
