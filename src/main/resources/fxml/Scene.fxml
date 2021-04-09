@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -14,6 +15,11 @@
                </font>
             </Label>
             <Button fx:id="ChangeScenePushed" layoutX="823.0" layoutY="626.0" mnemonicParsing="false" onAction="#ChangeScenePushed" prefWidth="240.0" text="Tovább a film kiválasztásához" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="40.0" />
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+               <image>
+                  <Image url="@../images/71+ncdWcmRL.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </content>
