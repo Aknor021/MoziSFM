@@ -1,7 +1,38 @@
 .button {
     -fx-font-weight: bold;
     -fx-background-color: #F5821E;
-    -fx-font-size: 12;
+    -fx-font-size: 15;
+    -fx-background-radius: 50, 50;
+    -fx-text-fill: black;
+}
+.menubutton {
+    -fx-font-weight: bold;
+    -fx-background-color: #F5821E;
+    -fx-font-size: 18;
+    -fx-background-radius: 50, 50;
+    -fx-text-fill: black;
+}
+.timebutton {
+    -fx-font-weight: bold;
+    -fx-background-color: #F5821E;
+    -fx-font-size: 20;
+    -fx-background-radius: 50, 50;
+    -fx-text-fill: black;
+}
+.filmtext {
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-font-size: 15;
+    -fx-text-fill: white;
+}
+.filmpane{
+    -fx-background-radius: 50,50;
+    -fx-background-color: #2b1d14;
+}
+.seatbutton {
+    -fx-background-color: #2b1d14;
+    -fx-text-fill: white;
+    -fx-background-radius: 50, 50;
 }
 *{
     -fx-base: #602021;
