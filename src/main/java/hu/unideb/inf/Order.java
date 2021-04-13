@@ -46,4 +46,12 @@ public class Order {
     public void setMEAL(String MEAL) {
         this.MEAL = MEAL;
     }
+
+    public Order(String ID, String FILM, String ULO_HELY, Date DATE, String MEAL) {
+        this.ID = ID;
+        this.FILM = FILM;
+        this.ULO_HELY = ULO_HELY;
+        this.DATE = DATE;
+        this.MEAL = MEAL;
+    }
 }
