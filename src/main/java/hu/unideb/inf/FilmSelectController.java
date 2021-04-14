@@ -49,6 +49,8 @@ public class FilmSelectController    {
 
     @FXML
     void film1(ActionEvent event) throws IOException {
+        ID_open();
+        ID_write();
         film = "Free Guy";
         film_save(film);
         Parent Next_to_Time = FXMLLoader.load(getClass().getResource("/fxml/Time_Select.fxml") );
@@ -59,7 +61,10 @@ public class FilmSelectController    {
     }
     @FXML
     void film2(ActionEvent event) throws IOException {
-        film_save("Fekete özvegy");
+        ID_open();
+        ID_write();
+        film = "Fekete özvegy";
+        film_save(film);
         Parent Next_to_Time = FXMLLoader.load(getClass().getResource("/fxml/Time_Select.fxml") );
         Scene Time_scene = new Scene(Next_to_Time);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -68,7 +73,10 @@ public class FilmSelectController    {
     }
     @FXML
     void film3(ActionEvent event) throws IOException {
-        film_save("Lelki terror");
+        ID_open();
+        ID_write();
+        film = "Lelki ismeretek";
+        film_save(film);
         Parent Next_to_Time = FXMLLoader.load(getClass().getResource("/fxml/Time_Select.fxml") );
         Scene Time_scene = new Scene(Next_to_Time);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -77,21 +85,43 @@ public class FilmSelectController    {
     }
     @FXML
     void film4(ActionEvent event) throws IOException {
-        film_save("film4");
+        ID_open();
+        ID_write();
+        film = "Deadpool";
+        film_save(film);
         Parent Next_to_Time = FXMLLoader.load(getClass().getResource("/fxml/Time_Select.fxml") );
         Scene Time_scene = new Scene(Next_to_Time);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(Time_scene);
         window.show();
     }
+    int ID ;
+    int ID_open() throws IOException {
+        FileReader file = new FileReader("src/main/resources/DB/ID.txt");
+        Scanner sc = new Scanner(file);
+        ID = sc.nextInt();
+        return ID;
+    }
 
-
+    void ID_write(){
+        try {
+            FileWriter myWriter = new FileWriter("src/main/resources/DB/Current_order.txt",true);
+            BufferedWriter bw = new BufferedWriter(myWriter);
+            bw.write(ID+";");
+            bw.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 
     void film_save(String film) throws IOException {
         try {
-            FileWriter myWriter = new FileWriter("Current_order.txt");
-            myWriter.write(film);
-            myWriter.close();
+            FileWriter myWriter = new FileWriter("src/main/resources/DB/Current_order.txt",true);
+            BufferedWriter bw = new BufferedWriter(myWriter);
+            bw.write(film+";");
+            bw.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
