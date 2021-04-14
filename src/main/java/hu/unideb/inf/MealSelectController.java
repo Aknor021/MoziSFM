@@ -17,7 +17,21 @@ import javafx.scene.control.Label;
 public class MealSelectController {
     List<String> order_list=new ArrayList<String>();
 
+    @FXML
+    void ALL_Items_DEL(ActionEvent event) {
+        order_list.clear();
+        Orders_list.setText(String.valueOf(order_list));
 
+    }
+    @FXML
+    void Last_item_DEL(ActionEvent event) {
+        if (order_list.size()<1){Orders_list.setText("Nincs elem");}
+        else {
+            int last = order_list.size() - 1;
+            order_list.remove(last);
+            Orders_list.setText(String.valueOf(order_list));
+        }
+    }
 
 
     @FXML

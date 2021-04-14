@@ -61,6 +61,8 @@
             <Button layoutX="272.0" layoutY="548.0" mnemonicParsing="false" onAction="#Nachos_kicsi" prefHeight="10.0" prefWidth="80.0" text="Kicsi" />
             <Button layoutX="272.0" layoutY="583.0" mnemonicParsing="false" onAction="#Nachos_kozepes" prefHeight="10.0" prefWidth="80.0" text="Közepes" />
             <Button layoutX="272.0" layoutY="617.0" mnemonicParsing="false" onAction="#Nachos_nagy" prefHeight="10.0" prefWidth="80.0" text="Nagy" />
+            <Button layoutX="868.0" layoutY="213.0" mnemonicParsing="false" onAction="#Last_item_DEL" text="Utolsó elem visszavonása" />
+            <Button layoutX="867.0" layoutY="263.0" mnemonicParsing="false" onAction="#ALL_Items_DEL" prefHeight="31.0" prefWidth="199.0" text="Össze törlése" />
          </children></AnchorPane>
   </content>
 </ScrollPane>
