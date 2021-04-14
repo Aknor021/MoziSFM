@@ -109,7 +109,7 @@ public class FilmSelectController    {
             BufferedWriter bw = new BufferedWriter(myWriter);
             bw.write(ID+";");
             bw.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Successfully wrote the ID to the file : Current_order ");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -122,7 +122,7 @@ public class FilmSelectController    {
             BufferedWriter bw = new BufferedWriter(myWriter);
             bw.write(film+";");
             bw.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Successfully wrote the film to the file: Current_order ");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
