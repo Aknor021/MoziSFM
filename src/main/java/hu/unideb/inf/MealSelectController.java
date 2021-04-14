@@ -8,9 +8,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.scene.control.Label;
 
 public class MealSelectController {
+    List<String> order_list=new ArrayList<String>();
+
+
+
 
     @FXML
     void BackButtonPushed(javafx.event.ActionEvent event) throws IOException {
@@ -29,4 +37,81 @@ public class MealSelectController {
         window.setScene(Summary_Scene);
         window.show();
     }
+    @FXML
+    private Label Orders_list;
+
+
+    @FXML
+    void Cola_kicsi(ActionEvent event) {
+        order_list.add("Cola kicsi\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Cola_kozepes(ActionEvent event) {
+        order_list.add("Cola közepes\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Cola_nagy(ActionEvent event) {
+        order_list.add("Cola nagy\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Fanta_kicsi(ActionEvent event) {
+        order_list.add("Fanta kicsi\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Fanta_kozepes(ActionEvent event) {
+        order_list.add("Fanta közepes\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Fanta_nagy(ActionEvent event) {
+        order_list.add("Fanta nagy\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Nachos_kicsi(ActionEvent event) {
+        order_list.add("Nachos kicsi\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Nachos_kozepes(ActionEvent event) {
+        order_list.add("Nachos közepes\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Nachos_nagy(ActionEvent event) {
+        order_list.add("Nachos nagy\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Popcorn_kicsi(ActionEvent event) {
+        order_list.add("Popcorn kicsi\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Popcorn_kozepes(ActionEvent event) {
+        order_list.add("Popcorn közepes\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+    @FXML
+    void Popcorn_nagy(ActionEvent event) {
+        order_list.add("Popcorn nagy\n");
+        Orders_list.setText(String.valueOf(order_list));
+    }
+
+
 }
