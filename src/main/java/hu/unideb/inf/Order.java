@@ -1,6 +1,7 @@
 package hu.unideb.inf;
 
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     public String ID;
@@ -8,6 +9,7 @@ public class Order {
     public String ULO_HELY;
     public Date DATE ;
     public String MEAL;
+
 
     public String getID() {
         return ID;
