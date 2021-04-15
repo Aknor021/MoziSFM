@@ -14,7 +14,7 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.SitPlaceSelectController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0"  prefHeight="720.0" prefWidth="1080.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0">
          <children>
             <Label layoutX="100.0" layoutY="70.0" text="Ülőhely kiválasztás">
                <font>
@@ -28,7 +28,7 @@
                   <Image url="@../images/71+ncdWcmRL.png" />
                </image>
             </ImageView>
-            <GridPane layoutX="265.0" layoutY="282.0" prefHeight="318.0" prefWidth="685.0">
+            <GridPane layoutX="265.0" layoutY="222.0" prefHeight="318.0" prefWidth="685.0">
               <columnConstraints>
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -115,8 +115,8 @@
                   </Label>
                </children></Pane>
             <Label fx:id="choice_box_display" layoutX="41.0" layoutY="282.0" prefHeight="28.0" prefWidth="157.0" />
-            <Label fx:id="Selected_Seat_Label" layoutX="439.0" layoutY="243.0" prefHeight="26.0" prefWidth="511.0" />
-            <Label layoutX="303.0" layoutY="240.0" prefHeight="32.0" prefWidth="136.0" text="Választott ülőhelyek:">
+            <Label fx:id="Selected_Seat_Label" layoutX="478.0" layoutY="560.0" prefHeight="26.0" prefWidth="511.0" />
+            <Label layoutX="292.0" layoutY="557.0" prefHeight="32.0" prefWidth="136.0" text="Választott ülőhelyek:">
                <font>
                   <Font size="14.0" />
                </font>
