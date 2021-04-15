@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hu.unideb.inf.SitPlaceSelectController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.SitPlaceSelectController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" onDragDetected="#Choice_box_selected" prefHeight="720.0" prefWidth="1080.0">
          <children>
             <Label layoutX="100.0" layoutY="70.0" text="Ülőhely kiválasztás">
                <font>
@@ -21,7 +29,7 @@
                   <Image url="@../images/71+ncdWcmRL.png" />
                </image>
             </ImageView>
-            <GridPane layoutX="72.0" layoutY="206.0" prefHeight="403.0" prefWidth="796.0">
+            <GridPane layoutX="265.0" layoutY="282.0" prefHeight="318.0" prefWidth="685.0">
               <columnConstraints>
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -63,7 +71,7 @@
                    <Label text="7.oszlop" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
                    <Label text="8.oszlop" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
 
-                  <Button mnemonicParsing="false" styleClass="button" text="A1" GridPane.columnIndex="1" />
+                  <Button  mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A1" GridPane.columnIndex="1" />
                   <Button mnemonicParsing="false" styleClass="button" text="B1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" styleClass="button" text="C1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                    <Button mnemonicParsing="false" styleClass="button" text="D1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -137,7 +145,28 @@
 
                </children>
             </GridPane>
-            <Pane layoutX="218.0" layoutY="143.0" prefHeight="26.0" prefWidth="602.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50 50;" />
+            <Pane layoutX="360.0" layoutY="175.0" prefHeight="26.0" prefWidth="602.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50 50;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="-4.0" prefHeight="34.0" prefWidth="604.0" text="Vászon" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <ChoiceBox fx:id="choicebox" layoutX="41.0" layoutY="247.0" prefWidth="150.0" />
+            <Label layoutX="41.0" layoutY="221.0" text="ülőhelyek száma :">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="choice_box_display" layoutX="41.0" layoutY="282.0" prefHeight="28.0" prefWidth="157.0" />
+            <Button layoutX="199.0" layoutY="244.0" mnemonicParsing="false" onAction="#Choice_box_selected" text="Választ" />
+            <Label fx:id="Selected_Seat_Label" layoutX="439.0" layoutY="243.0" prefHeight="26.0" prefWidth="511.0" />
+            <Label layoutX="303.0" layoutY="240.0" prefHeight="32.0" prefWidth="136.0" text="Választott ülőhelyek:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </content>
 </ScrollPane>

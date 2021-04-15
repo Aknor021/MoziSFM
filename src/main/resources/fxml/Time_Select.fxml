@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hu.unideb.inf.TimeSelectController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.TimeSelectController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0">
          <children>
@@ -19,14 +23,14 @@
                <image>
                   <Image url="@../images/71+ncdWcmRL.png" />
                </image></ImageView>
-            <DatePicker layoutX="149.0" layoutY="224.0" prefHeight="50.0" prefWidth="260.0" showWeekNumbers="true" />
-            <Button layoutX="621.0" layoutY="221.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="10:00 - 12:30 ">
+            <DatePicker fx:id="dp" layoutX="149.0" layoutY="224.0" onAction="#DatePickePicked" prefHeight="50.0" prefWidth="260.0" showWeekNumbers="true" />
+            <Button layoutX="621.0" layoutY="221.0" mnemonicParsing="false" onAction="#Time1" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="10:00 - 12:30 ">
                <font>
                   <Font size="22.0" />
                </font></Button>
-            <Button layoutX="621.0" layoutY="312.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="13:00 - 14:30" />
-            <Button layoutX="621.0" layoutY="403.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="15:00 - 16:30" />
-            <Button layoutX="621.0" layoutY="491.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="17:00 - 18:30" />
+            <Button layoutX="621.0" layoutY="312.0" mnemonicParsing="false" onAction="#Time2" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="13:00 - 14:30" />
+            <Button layoutX="621.0" layoutY="403.0" mnemonicParsing="false" onAction="#Time3" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="15:00 - 16:30" />
+            <Button layoutX="621.0" layoutY="491.0" mnemonicParsing="false" onAction="#Time4" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="17:00 - 18:30" />
          </children></AnchorPane>
   </content>
 </ScrollPane>
