@@ -17,8 +17,12 @@ import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SitPlaceSelectController implements Initializable , EventHandler<ActionEvent> {
@@ -35,6 +39,9 @@ public class SitPlaceSelectController implements Initializable , EventHandler<Ac
 
     @FXML
     void NextButtonPushed(ActionEvent event) throws IOException {
+
+        Seat_save(Seat_list);
+
         Parent Next_to_Meal = FXMLLoader.load(getClass().getResource("/fxml/Meal_Select.fxml") );
         Scene Meal_scene = new Scene(Next_to_Meal);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -43,42 +50,44 @@ public class SitPlaceSelectController implements Initializable , EventHandler<Ac
     }
     @FXML
     private Label Selected_Seat_Label;
-    @FXML
-    private Button A1;
-    @FXML
-    private ChoiceBox<Integer> choicebox;
-    @FXML
-    private Label choice_box_display;
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        fill_list();
+
     }
 
-    private void fill_list() {
-        for (int i = 1; i < 6; i++) {
-            list.add(i);
-        }
-        choicebox.getItems().addAll(list);
-    }
 
-    @FXML
-    void Choice_box_selected(ActionEvent event) {
-        String display = String.valueOf(choicebox.getValue());
-        if (display==null){choice_box_display.setText("Nem maradt több ülőhely !");}
-        else{choice_box_display.setText("Ennyi ülőhelyet választott : "+choicebox.getValue());}
-    }
+
+
     @FXML
     void SeatButton(ActionEvent event) {
         handle(event);
+        Selected_Seat_Label.setText(String.valueOf(Seat_list));
     }
-
-
+    List Seat_list = new ArrayList();
+    String Seat;
     @Override
     public void handle(ActionEvent actionEvent) {
-        if (actionEvent.getSource()==A1){System.out.println(((Control)actionEvent.getSource()).getId());}
+        Seat =((Control)actionEvent.getSource()).getId();
+        //Seat_list.add(Seat);
+        if (!(Seat_list.contains(Seat))){Seat_list.add(Seat);}
+        else{Seat_list.remove(Seat);}
     }
+    void Seat_save(List<String> Seat_list) throws IOException {
+        try {
+            FileWriter myWriter = new FileWriter("src/main/resources/DB/Current_order.txt", true);
+            BufferedWriter bw = new BufferedWriter(myWriter);
+            bw.write(Seat_list + ";");
+            bw.close();
+            System.out.println("Successfully wrote the seats to the file: Current_order ");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
 
 
-
+    }
 }
