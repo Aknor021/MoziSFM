@@ -23,7 +23,6 @@ public class Order {
 
     public String MEAL;
 
-
     public String getID() {
         return ID;
     }
@@ -60,6 +59,11 @@ public class Order {
 
     public void setMEAL(String MEAL) {
         this.MEAL = MEAL;
+    }
+
+    public Order()
+    {
+
     }
 
     public Order(String ID, String FILM, String ULO_HELY, Date DATE, String MEAL) {
