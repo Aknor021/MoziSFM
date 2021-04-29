@@ -8,6 +8,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.h2.tools.Server;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.SQLException;
 
 
@@ -36,11 +39,19 @@ public class MainApp extends Application {
     public static void main(String[] args) throws SQLException { //kötelező kivételkezelés
         startDatabase(); //adatbázis elindítása
 
+        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
         launch(args);
     }
 
     private static void startDatabase() throws SQLException //adatbázis elindítási metódus (programba beépített adatbázis)
     {
         new Server().runTool("-tcp", "-web", "-ifNotExists");
+    }
+
+    void save()
+    {
+
     }
 }
