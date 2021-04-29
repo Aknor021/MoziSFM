@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.h2.tools.Server;
+
+import java.sql.SQLException;
 
 
 public class MainApp extends Application {
@@ -30,8 +33,14 @@ public class MainApp extends Application {
      *
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException { //kötelező kivételkezelés
+        startDatabase(); //adatbázis elindítása
+
         launch(args);
     }
 
+    private static void startDatabase() throws SQLException //adatbázis elindítási metódus (programba beépített adatbázis)
+    {
+        new Server().runTool("-tcp", "-web", "-ifNotExists");
+    }
 }
