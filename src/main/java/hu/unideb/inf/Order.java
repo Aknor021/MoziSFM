@@ -1,13 +1,26 @@
 package hu.unideb.inf;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name = "orders") //tábla nevének megváltoztatása
 public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)  //az id generálás egyesével növekszik
     public String ID;
+
+    @Column(nullable = false) //nem lehet NULL érték(muszály filmet választani a hitelesítéshez)
     public String FILM;
+
+    @Column(nullable = false)
     public String ULO_HELY;
-    public Date DATE ;
+
+    @Column(nullable = false)
+    public Date DATE;
+
     public String MEAL;
 
 
