@@ -8,10 +8,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.h2.tools.Server;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.sql.SQLException;
+import java.util.Date;
 
 
 public class MainApp extends Application {
@@ -39,8 +38,6 @@ public class MainApp extends Application {
     public static void main(String[] args) throws SQLException { //kötelező kivételkezelés
         startDatabase(); //adatbázis elindítása
 
-        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
-        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         launch(args);
     }
@@ -50,8 +47,24 @@ public class MainApp extends Application {
         new Server().runTool("-tcp", "-web", "-ifNotExists");
     }
 
-    void save()
+    void generateRecord(String id, String film, String ulo_hely, Date date, String meal)
     {
+        Order order = new Order();
+        order.setFILM(film);
+        order.setULO_HELY(ulo_hely);
+        order.setDATE(date);
+        order.setMEAL(meal);
 
+        save(order);
+    }
+
+    void save(Order order)
+    {
+        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin(); //adatbázisba íráshoz megnyitás
+        entityManager.persist(order);
+        entityManager.getTransaction().commit(); //adatbázis írás lezárás
     }
 }
