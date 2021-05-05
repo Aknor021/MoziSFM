@@ -1,8 +1,8 @@
 package hu.unideb.inf;
 
+import javafx.scene.control.DatePicker;
+
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "orders") //tábla nevének megváltoztatása
@@ -10,67 +10,80 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)  //az id generálás egyesével növekszik
-    public String ID;
+    public int id;
 
-    @Column(nullable = false) //nem lehet NULL érték(muszály filmet választani a hitelesítéshez)
-    public String FILM;
-
-    @Column(nullable = false)
-    public String ULO_HELY;
+    @Column(nullable = false) //nem lehet NULL érték(muszáj filmet választani a hitelesítéshez)
+    public String film_cim;
 
     @Column(nullable = false)
-    public Date DATE;
+    public String ulo_hely;
 
-    public String MEAL;
+    @Column(nullable = false)
+    public String dp;
 
-    public String getID() {
-        return ID;
-    }
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-    public String getFILM() {
-        return FILM;
-    }
+    @Column(nullable = false)
+    public String idopont;
 
-    public void setFILM(String FILM) {
-        this.FILM = FILM;
+    @Column(nullable = false)
+    public String etel_ital;
+
+    public int getId() {
+        return id;
     }
 
-    public String getULO_HELY() {
-        return ULO_HELY;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setULO_HELY(String ULO_HELY) {
-        this.ULO_HELY = ULO_HELY;
+    public String getFilm_cim() {
+        return film_cim;
     }
 
-    public Date getDATE() {
-        return DATE;
+    public void setFilm_cim(String film_cim) {
+        this.film_cim = film_cim;
     }
 
-    public void setDATE(Date DATE) {
-        this.DATE = DATE;
+    public String getUlo_hely() {
+        return ulo_hely;
     }
 
-    public String getMEAL() {
-        return MEAL;
+    public void setUlo_hely(String ulo_hely) {
+        this.ulo_hely = ulo_hely;
     }
 
-    public void setMEAL(String MEAL) {
-        this.MEAL = MEAL;
+    public String getDp() {
+        return dp;
     }
 
-    public Order()
-    {
-
+    public void setDp(String dp) {
+        this.dp = dp;
     }
 
-    public Order(String ID, String FILM, String ULO_HELY, Date DATE, String MEAL) {
-        this.ID = ID;
-        this.FILM = FILM;
-        this.ULO_HELY = ULO_HELY;
-        this.DATE = DATE;
-        this.MEAL = MEAL;
+    public String getIdopont() {
+        return idopont;
+    }
+
+    public void setIdopont(String idopont) {
+        this.idopont = idopont;
+    }
+
+    public String getEtel_ital() {
+        return etel_ital;
+    }
+
+    public void setEtel_ital(String etel_ital) {
+        this.etel_ital = etel_ital;
+    }
+
+    public Order(String film_cim, String ulo_hely, String dp, String idopont, String etel_ital) {
+        this.film_cim = film_cim;
+        this.ulo_hely = ulo_hely;
+        this.dp = dp;
+        this.idopont = idopont;
+        this.etel_ital = etel_ital;
+    }
+
+    public Order() {
+
     }
 }

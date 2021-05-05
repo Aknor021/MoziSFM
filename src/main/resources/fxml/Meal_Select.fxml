@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.MealSelectController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.MainApp">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="761.0" prefWidth="1080.0">
          <children>
@@ -18,8 +18,8 @@
                   <Font size="40.0" />
                </font>
             </Label>
-            <Button layoutX="36.0" layoutY="680.0" mnemonicParsing="false" onAction="#BackButtonPushed" text="Vissza" AnchorPane.bottomAnchor="38.39999999999998" AnchorPane.leftAnchor="36.0" />
-            <Button layoutX="802.0" layoutY="680.0" mnemonicParsing="false" onAction="#NextButtonPushed" prefWidth="240.0" text="Rendelés megtekintés" AnchorPane.bottomAnchor="38.39999999999998" AnchorPane.rightAnchor="38.0" />
+            <Button layoutX="36.0" layoutY="680.0" mnemonicParsing="false" onAction="#BackToSitPlacePushed" text="Vissza" AnchorPane.bottomAnchor="38.39999999999998" AnchorPane.leftAnchor="36.0" />
+            <Button layoutX="802.0" layoutY="680.0" mnemonicParsing="false" onAction="#NextToSummaryPushed" prefWidth="240.0" text="Rendelés megtekintés" AnchorPane.bottomAnchor="38.39999999999998" AnchorPane.rightAnchor="38.0" />
              <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@../images/71+ncdWcmRL.png" />
