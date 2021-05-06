@@ -48,6 +48,8 @@ public class MainApp extends Application {
         startDatabase(); //adatbázis elindítása
 
         //teszt miatt
+
+
         order.setUlo_hely("C6;C7;C8");
         order.setEtel_ital("kola_s;kola_m;popcorn_l");
 
@@ -55,13 +57,14 @@ public class MainApp extends Application {
         System.out.println("Az adatbazis elindult, a megnyitasahoz tedd a kovetkezoket:");
         System.out.println("- Nyiss meg egy bongeszot");
         System.out.println("- Url-be ird be         : http://localhost:8082/");
-        System.out.println("- JDBC URL              : jdbc:h2:mem:tomi_a_kiraly");
+        System.out.println("- JDBC URL              : jdbc:h2:file:~/database");
         System.out.println("- User Name             : sa");
         System.out.println("- Password              : [hagyd uresen]"); //egyelőre még nincs jelszó
         System.out.println("___________________________________________________________");
 
         launch(args);
     }
+
 
     private static void startDatabase() throws SQLException {//adatbázis elindítási metódus (programba beépített adatbázis)
         new Server().runTool("-tcp", "-web", "-ifNotExists");
@@ -126,6 +129,7 @@ public class MainApp extends Application {
 
     @FXML
     void BackToFilmSelectPushed(javafx.event.ActionEvent event) throws IOException {
+        order.setFilm_cim(null);
         Parent Back_to_Film_Select= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Film_Select.fxml")));
         Scene Film_Select_scene = new Scene(Back_to_Film_Select);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
