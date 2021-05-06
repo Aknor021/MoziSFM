@@ -47,11 +47,6 @@ public class MainApp extends Application {
     public static void main(String[] args) throws Exception { //kötelező kivételkezelés
         startDatabase(); //adatbázis elindítása
 
-        //teszt miatt
-
-
-        order.setUlo_hely("C6;C7;C8");
-        order.setEtel_ital("kola_s;kola_m;popcorn_l");
 
         System.out.println("___________________________________________________________");
         System.out.println("Az adatbazis elindult, a megnyitasahoz tedd a kovetkezoket:");
@@ -73,12 +68,8 @@ public class MainApp extends Application {
     public static void generateRecord(Order order)
     {
 
-        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
-        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin(); //adatbázisba íráshoz megnyitás
-        entityManager.persist(order);
-        entityManager.getTransaction().commit(); //adatbázis írás lezárás
+
 
     }
 
