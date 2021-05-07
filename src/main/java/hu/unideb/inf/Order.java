@@ -66,14 +66,6 @@ public class Order {
         this.etel_ital = etel_ital;
     }
 
-    public Order(String film_cim, String ulo_hely, String dp, String idopont, String etel_ital) {
-        this.film_cim = film_cim;
-        this.ulo_hely = ulo_hely;
-        this.dp = dp;
-        this.idopont = idopont;
-        this.etel_ital = etel_ital;
-    }
-
     public Order() {
 
     }

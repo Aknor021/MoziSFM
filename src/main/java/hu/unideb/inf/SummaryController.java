@@ -7,11 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 import java.util.Objects;
@@ -19,8 +17,6 @@ import java.util.ResourceBundle;
 import java.util.TreeMap;
 
 public class SummaryController implements Initializable{
-    @FXML
-    private Button ChangeScenePushed;
 
     @FXML
     private Label ID_Label;
@@ -110,7 +106,7 @@ public class SummaryController implements Initializable{
         Meal_label.setText(meal.toString());
 
         //Ülőhely
-        String[] tomb2 = MainApp.order.ulo_hely.split(";");
+        String[] tomb2 = MainApp.order.getUlo_hely().split(";");
         StringBuilder seat = new StringBuilder();
 
         for (int i = 0; i < tomb2.length; i++) {

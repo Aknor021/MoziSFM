@@ -33,12 +33,11 @@ public class JpaOrderDAO implements OrderDAO {
     @Override
     public List<Order> getOrders() {
         TypedQuery<Order> query = entityManager.createQuery("SELECT o FROM Order o", Order.class);
-        List<Order> order = query.getResultList();
-        return order;
+        return query.getResultList();
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
         entityManager.close();
         entityManagerFactory.close();
     }
