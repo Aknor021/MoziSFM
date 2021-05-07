@@ -13,7 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class FXMLController implements Initializable {
+public class FXMLController {
 
     @FXML
     void ChangeScenePushed(ActionEvent event) throws IOException {
@@ -23,9 +23,4 @@ public class FXMLController implements Initializable {
         window.setScene(Film_Scene);
         window.show();
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 }
