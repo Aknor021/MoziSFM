@@ -22,7 +22,7 @@ import java.util.*;
 public class MainApp extends Application {
 
 
-    private static Order order;
+    public static Order order;
 
     public static void newOrder() {
         order = new Order();
@@ -238,8 +238,8 @@ public class MainApp extends Application {
 
     //----------------------------------MealSelectController------------------------------------------------------
 
-    List<String> order_list=new ArrayList<>();
-    List<String> order_list_DB=new ArrayList<>();
+    static List<String> order_list=new ArrayList<>();
+    static List<String> order_list_DB=new ArrayList<>();
 
     @FXML
     void ALL_Items_DEL() {
@@ -377,96 +377,5 @@ public class MainApp extends Application {
 
 
     //----------------------------------MealSelectController_VÉGE-------------------------------------------------
-
-    //----------------------------------SummarySelectController---------------------------------------------------
-
-    @FXML
-    private Label Film_Label;
-
-    @FXML
-    private Label Time_label;
-
-    @FXML
-    private Label Meal_label;
-
-    @FXML
-    private Label Seat_label;
-
-    @FXML
-    void BackToMealPushed(ActionEvent event) throws Exception {
-        order.setEtel_ital(null);
-        order_list.clear();
-        order_list_DB.clear();
-
-        Parent Back_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
-        Scene Meal_scene = new Scene(Back_to_Meal);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(Meal_scene);
-        window.show();
-    }
-
-
-    @FXML
-    void NextToEndScenePushed(ActionEvent event) throws Exception {
-        OrderDAO oDAO = new JpaOrderDAO();
-        oDAO.saveOrder(order);
-        oDAO.close();
-
-        Parent Next_to_End = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/END_Scene.fxml")));
-        Scene End_scene = new Scene(Next_to_End);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(End_scene);
-        window.show();
-    }
-
-    //-----KI_ÍRÓ_METÓDUS---------------NEM_MŰKÖDIK_MÉG------------------------
-/*
-    public void summary() {
-
-
-        //Film címe
-        Film_Label.setText(order.getFilm_cim());
-
-        //Datum és ido
-        Time_label.setText(order.getDp() + " " + order.getIdopont());
-
-        //Etel_ital
-        String[] tomb = order.getEtel_ital().split(";");
-        StringBuilder meal = new StringBuilder();
-
-        Map<String, Integer> map = new TreeMap<>();
-
-        for (String s : tomb) {
-            if (map.containsKey(s)) {
-                int x = map.get(s);
-                x++;
-                map.put(tomb[0], x);
-            } else
-                map.put(tomb[0], 1);
-        }
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            meal.append(entry.getValue()).append(" * ").append(entry.getKey()).append("\n");
-        }
-        Meal_label.setText(meal.toString());
-
-        //Ülőhely
-        String[] tomb2 = order.ulo_hely.split(";");
-        StringBuilder seat = new StringBuilder();
-
-        for (int i = 0; i < tomb2.length; i++) {
-            seat.append(tomb2[i]);
-            if (i != tomb2.length - 1)
-                seat.append(", ");
-            else
-                seat.append(".");
-        }
-        Seat_label.setText(seat.toString());
-        }
-
-
-         */
-
-
-    //----------------------------------SummarySelectController_VÉGE-------------------------------------------------
 
 }
