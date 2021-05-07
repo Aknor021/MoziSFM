@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.h2.tools.Server;
 
-import javax.persistence.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
@@ -22,15 +21,26 @@ import java.util.*;
 
 public class MainApp extends Application {
 
-    static Order order = new Order();
+
+    private static Order order;
+
+    public static void newOrder() {
+        order = new Order();
+        order.setEtel_ital(null);
+        order.setFilm_cim(null);
+        order.setDp(null);
+        order.setUlo_hely(null);
+        order.setIdopont(null);
+
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Menu.fxml")));
-        
+
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
-        
+
         stage.setTitle("Mozi");
         stage.setScene(scene);
         stage.show();
@@ -47,6 +57,9 @@ public class MainApp extends Application {
     public static void main(String[] args) throws Exception { //kötelező kivételkezelés
         startDatabase(); //adatbázis elindítása
 
+        newOrder();
+
+
 
         System.out.println("___________________________________________________________");
         System.out.println("Az adatbazis elindult, a megnyitasahoz tedd a kovetkezoket:");
@@ -58,21 +71,13 @@ public class MainApp extends Application {
         System.out.println("___________________________________________________________");
 
         launch(args);
+
     }
 
 
     private static void startDatabase() throws SQLException {//adatbázis elindítási metódus (programba beépített adatbázis)
         new Server().runTool("-tcp", "-web", "-ifNotExists");
     }
-
-    public static void generateRecord(Order order)
-    {
-
-
-
-
-    }
-
 
 
     //----------------------------------FilmSelectController--------------------------------------------------
@@ -87,26 +92,28 @@ public class MainApp extends Application {
     }
 
     @FXML
-    void film1(ActionEvent event) throws IOException {
+    void film1(ActionEvent event) throws Exception {
         order.setFilm_cim("Free Guy");
         tovabbAzIdoKivalasztasra(event);
     }
     @FXML
-    void film2(ActionEvent event) throws IOException {
+    void film2(ActionEvent event) throws Exception {
         order.setFilm_cim("Fekete ozvegy");
         tovabbAzIdoKivalasztasra(event);
     }
     @FXML
-    void film3(ActionEvent event) throws IOException {
+    void film3(ActionEvent event) throws Exception {
         order.setFilm_cim("Lelki ismeretek");
         tovabbAzIdoKivalasztasra(event);
     }
     @FXML
-    void film4(ActionEvent event) throws IOException {
+    void film4(ActionEvent event) throws Exception {
         order.setFilm_cim("Deadpool");
         tovabbAzIdoKivalasztasra(event);
     }
-    void tovabbAzIdoKivalasztasra(ActionEvent event) throws IOException {
+    void tovabbAzIdoKivalasztasra(ActionEvent event) throws Exception {
+
+
         Parent Next_to_Time = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Time_Select.fxml")));
         Scene Time_scene = new Scene(Next_to_Time);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -119,8 +126,9 @@ public class MainApp extends Application {
     //----------------------------------TimeSelectController--------------------------------------------------
 
     @FXML
-    void BackToFilmSelectPushed(javafx.event.ActionEvent event) throws IOException {
+    void BackToFilmSelectPushed(javafx.event.ActionEvent event) throws Exception {
         order.setFilm_cim(null);
+
         Parent Back_to_Film_Select= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Film_Select.fxml")));
         Scene Film_Select_scene = new Scene(Back_to_Film_Select);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -129,7 +137,9 @@ public class MainApp extends Application {
     }
 
     @FXML
-    void NextToSitPlaceSelectPushed(ActionEvent event) throws IOException {
+    void NextToSitPlaceSelectPushed(ActionEvent event) throws Exception {
+
+
         Parent Next_to_Sit_Place = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Sit_Place_Select.fxml")));
         Scene Sit_Select_scene = new Scene(Next_to_Sit_Place);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -147,23 +157,23 @@ public class MainApp extends Application {
     }
 
     @FXML
-    void Time1(ActionEvent event) throws IOException {
+    void Time1(ActionEvent event) throws Exception {
         order.setIdopont("10:00 - 12:30");
         NextToSitPlaceSelectPushed(event);
     }
 
     @FXML
-    void Time2(ActionEvent event) throws IOException {
+    void Time2(ActionEvent event) throws Exception {
         order.setIdopont("13:00 - 14:30");
         NextToSitPlaceSelectPushed(event);
     }
     @FXML
-    void Time3(ActionEvent event) throws IOException {
+    void Time3(ActionEvent event) throws Exception {
         order.setIdopont("15:00 - 16:30");
         NextToSitPlaceSelectPushed(event);
     }
     @FXML
-    void Time4(ActionEvent event) throws IOException {
+    void Time4(ActionEvent event) throws Exception {
         order.setIdopont("17:00 - 18:30");
         NextToSitPlaceSelectPushed(event);
     }
@@ -173,7 +183,11 @@ public class MainApp extends Application {
     //----------------------------------SitPlaceSelectController--------------------------------------------------
 
     @FXML
-    void BackToTimeSelectPushed(javafx.event.ActionEvent event) throws IOException {
+    void BackToTimeSelectPushed(javafx.event.ActionEvent event) throws Exception {
+        order.setIdopont(null);
+        order.setDp(null);
+
+
         Parent Back_to_Time = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Time_Select.fxml")));
         Scene Time_scene = new Scene(Back_to_Time);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -182,7 +196,7 @@ public class MainApp extends Application {
     }
 
     @FXML
-    void NextToMealSelectPushed(ActionEvent event) throws IOException {
+    void NextToMealSelectPushed(ActionEvent event) throws Exception {
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < Seat_list.size(); i++) {
             str.append(Seat_list.get(i));
@@ -190,6 +204,7 @@ public class MainApp extends Application {
                 str.append(";");
         }
         order.setUlo_hely(str.toString());
+
 
         Parent Next_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
         Scene Meal_scene = new Scene(Next_to_Meal);
@@ -245,7 +260,9 @@ public class MainApp extends Application {
     }
 
     @FXML
-    void BackToSitPlacePushed(javafx.event.ActionEvent event) throws IOException {
+    void BackToSitPlacePushed(javafx.event.ActionEvent event) throws Exception {
+        order.setUlo_hely(null);
+
         Parent Back_to_Sit_Place_Select= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Sit_Place_Select.fxml")));
         Scene Sit_Place_Select_scene = new Scene(Back_to_Sit_Place_Select);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -253,9 +270,8 @@ public class MainApp extends Application {
         window.show();
     }
 
-    static int y = 0;
     @FXML
-    void NextToSummaryPushed(ActionEvent event) throws IOException {
+    void NextToSummaryPushed(ActionEvent event) throws Exception {
         StringBuilder str2 = new StringBuilder();
         for (int i = 0; i < order_list_DB.size(); i++) {
             str2.append(order_list_DB.get(i));
@@ -264,7 +280,6 @@ public class MainApp extends Application {
         }
         order.setEtel_ital(str2.toString());
 
-        y = 1;
 
         Parent Next_to_Summary = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Summary.fxml")));
         Scene Summary_Scene = new Scene(Next_to_Summary);
@@ -272,7 +287,6 @@ public class MainApp extends Application {
         window.setScene(Summary_Scene);
         window.show();
 
-        summary();
     }
     @FXML
     private Label Orders_list;
@@ -379,7 +393,11 @@ public class MainApp extends Application {
     private Label Seat_label;
 
     @FXML
-    void BackToMealPushed(ActionEvent event) throws IOException {
+    void BackToMealPushed(ActionEvent event) throws Exception {
+        order.setEtel_ital(null);
+        order_list.clear();
+        order_list_DB.clear();
+
         Parent Back_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
         Scene Meal_scene = new Scene(Back_to_Meal);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -389,8 +407,10 @@ public class MainApp extends Application {
 
 
     @FXML
-    void NextToEndScenePushed(ActionEvent event) throws IOException {
-        generateRecord(order);
+    void NextToEndScenePushed(ActionEvent event) throws Exception {
+        OrderDAO oDAO = new JpaOrderDAO();
+        oDAO.saveOrder(order);
+        oDAO.close();
 
         Parent Next_to_End = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/END_Scene.fxml")));
         Scene End_scene = new Scene(Next_to_End);
@@ -400,8 +420,9 @@ public class MainApp extends Application {
     }
 
     //-----KI_ÍRÓ_METÓDUS---------------NEM_MŰKÖDIK_MÉG------------------------
-
+/*
     public void summary() {
+
 
         //Film címe
         Film_Label.setText(order.getFilm_cim());
@@ -410,14 +431,14 @@ public class MainApp extends Application {
         Time_label.setText(order.getDp() + " " + order.getIdopont());
 
         //Etel_ital
-        String tomb[] = order.getEtel_ital().split(";");
+        String[] tomb = order.getEtel_ital().split(";");
         StringBuilder meal = new StringBuilder();
 
         Map<String, Integer> map = new TreeMap<>();
 
-        for (int i = 0; i < tomb.length; i++) {
-            if (map.containsKey(tomb[i])) {
-                int x = map.get(tomb[i]);
+        for (String s : tomb) {
+            if (map.containsKey(s)) {
+                int x = map.get(s);
                 x++;
                 map.put(tomb[0], x);
             } else
@@ -429,7 +450,7 @@ public class MainApp extends Application {
         Meal_label.setText(meal.toString());
 
         //Ülőhely
-        String tomb2[] = order.ulo_hely.split(";");
+        String[] tomb2 = order.ulo_hely.split(";");
         StringBuilder seat = new StringBuilder();
 
         for (int i = 0; i < tomb2.length; i++) {
@@ -442,6 +463,8 @@ public class MainApp extends Application {
         Seat_label.setText(seat.toString());
         }
 
+
+         */
 
 
     //----------------------------------SummarySelectController_VÉGE-------------------------------------------------

@@ -1,7 +1,5 @@
 package hu.unideb.inf;
 
-import javafx.scene.control.DatePicker;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,20 +10,13 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)  //az id generálás egyesével növekszik
     public int id;
 
-    @Column(nullable = false) //nem lehet NULL érték(muszáj filmet választani a hitelesítéshez)
+    //@Column(nullable = false) //nem lehet NULL érték(muszáj filmet választani a hitelesítéshez)
     public String film_cim;
-
-    @Column(nullable = false)
     public String ulo_hely;
-
-    @Column(nullable = false)
     public String dp;
-
-    @Column(nullable = false)
     public String idopont;
-
-    @Column(nullable = false)
     public String etel_ital;
+
 
     public int getId() {
         return id;

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.jboss.jandex.Main;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +15,8 @@ import java.io.IOException;
 public class ENDSceneController {
     @FXML
     void NextButtonPushed(ActionEvent event) throws IOException {
+
+
         Parent Next_to_Menu = FXMLLoader.load(getClass().getResource("/fxml/Menu.fxml") );
         Scene Menu_Scene = new Scene(Next_to_Menu);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
