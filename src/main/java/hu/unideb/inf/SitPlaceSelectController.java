@@ -66,14 +66,14 @@ public class SitPlaceSelectController implements Initializable {
     String Seat;
 
     public void handle(ActionEvent actionEvent) {
-        Seat =((Control)actionEvent.getSource()).getId();
+    Seat =((Control)actionEvent.getSource()).getId();
         if (!(Seat_list.contains(Seat))) {
             Seat_list.add(Seat);
-        }
-        else {
+        } else {
             Seat_list.remove(Seat);
         }
     }
+
 
     public List<String> foglalt_helyek = new ArrayList<>();
     public List<Order> o_list = new ArrayList<>();
@@ -86,12 +86,15 @@ public class SitPlaceSelectController implements Initializable {
         o_list = oDAO.getOrders();
         for (Order o : o_list) {
             String[] ulohelyek = o.getUlo_hely().split(";");
-            Collections.addAll(foglalt_helyek, ulohelyek);
+
+            if(TimeSelectController.date.equals(o.getDp())
+                    && MainApp.order.getIdopont().equals(o.getIdopont())
+                    && MainApp.order.getFilm_cim().equals(o.getFilm_cim()))
+            {
+                Collections.addAll(foglalt_helyek, ulohelyek);
+            }
         }
-
-
         //a foglalt_helyek változóban az összes foglalt hely szerepel Stringként
-
 
 
 
