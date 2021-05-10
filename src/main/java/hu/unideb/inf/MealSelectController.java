@@ -6,29 +6,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.scene.control.Label;
+import java.util.Objects;
 
 public class MealSelectController {
-    List<String> order_list=new ArrayList<String>();
-    List<String> order_list_DB=new ArrayList<String>();
+    static List<String> order_list=new ArrayList<>();
+    public static List<String> order_list_DB=new ArrayList<>();
 
     @FXML
-    void ALL_Items_DEL(ActionEvent event) {
+    void ALL_Items_DEL() {
         order_list.clear();
         Orders_list.setText(String.valueOf(order_list));
 
     }
     @FXML
-    void Last_item_DEL(ActionEvent event) {
-        if (order_list.size()<1){Orders_list.setText("Nincs elem");}
+    void Last_item_DEL() {
+        if (order_list.size()<1) {
+            Orders_list.setText("Nincs elem");
+        }
         else {
             int last = order_list.size() - 1;
             order_list.remove(last);
@@ -36,10 +35,11 @@ public class MealSelectController {
         }
     }
 
-
     @FXML
-    void BackButtonPushed(javafx.event.ActionEvent event) throws IOException {
-        Parent Back_to_Sit_Place_Select= FXMLLoader.load(getClass().getResource("/fxml/Sit_Place_Select.fxml") );
+    void BackToSitPlacePushed(javafx.event.ActionEvent event) throws Exception {
+        MainApp.order.setUlo_hely(null);
+
+        Parent Back_to_Sit_Place_Select= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Sit_Place_Select.fxml")));
         Scene Sit_Place_Select_scene = new Scene(Back_to_Sit_Place_Select);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(Sit_Place_Select_scene);
@@ -47,117 +47,107 @@ public class MealSelectController {
     }
 
     @FXML
-    void NextButtonPushed(ActionEvent event) throws IOException {
-        Meal_save(order_list_DB);
-        Parent Next_to_Summary = FXMLLoader.load(getClass().getResource("/fxml/Summary.fxml") );
+    void NextToSummaryPushed(ActionEvent event) throws Exception {
+        StringBuilder str2 = new StringBuilder();
+        for (int i = 0; i < order_list_DB.size(); i++) {
+            str2.append(order_list_DB.get(i));
+            if(i != (order_list_DB.size() - 1))
+                str2.append(";");
+        }
+        MainApp.order.setEtel_ital(str2.toString());
+
+
+        Parent Next_to_Summary = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Summary.fxml")));
         Scene Summary_Scene = new Scene(Next_to_Summary);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(Summary_Scene);
         window.show();
+
     }
     @FXML
     private Label Orders_list;
 
-
-
-
     @FXML
-    void Cola_kicsi(ActionEvent event) {
+    void Cola_kicsi() {
         order_list.add("Cola kicsi\n");
-        order_list_DB.add("Cola kicsi");
+        order_list_DB.add("c_s");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Cola_kozepes(ActionEvent event) {
+    void Cola_kozepes() {
         order_list.add("Cola közepes\n");
-        order_list_DB.add("Cola közepes");
+        order_list_DB.add("c_m");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Cola_nagy(ActionEvent event) {
-        order_list.add("Cola nagy\n");
-        order_list_DB.add("Cola nagy");
+    void Cola_nagy() {
+        order_list.add("Cola Nagy\n");
+        order_list_DB.add("c_l");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Fanta_kicsi(ActionEvent event) {
+    void Fanta_kicsi() {
         order_list.add("Fanta kicsi\n");
-        order_list_DB.add("Fanta kicsi");
+        order_list_DB.add("f_s");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Fanta_kozepes(ActionEvent event) {
+    void Fanta_kozepes() {
         order_list.add("Fanta közepes\n");
-        order_list_DB.add("Fanta közepes");
+        order_list_DB.add("f_m");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Fanta_nagy(ActionEvent event) {
+    void Fanta_nagy() {
         order_list.add("Fanta nagy\n");
-        order_list_DB.add("Fanta nagy");
+        order_list_DB.add("f_l");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Nachos_kicsi(ActionEvent event) {
+    void Nachos_kicsi() {
         order_list.add("Nachos kicsi\n");
-        order_list_DB.add("Nachos kicsi");
+        order_list_DB.add("n_s");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Nachos_kozepes(ActionEvent event) {
+    void Nachos_kozepes() {
         order_list.add("Nachos közepes\n");
-        order_list_DB.add("Nachos közepes");
+        order_list_DB.add("n_m");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Nachos_nagy(ActionEvent event) {
+    void Nachos_nagy() {
         order_list.add("Nachos nagy\n");
-        order_list_DB.add("Nachos nagy");
+        order_list_DB.add("n_l");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Popcorn_kicsi(ActionEvent event) {
+    void Popcorn_kicsi() {
         order_list.add("Popcorn kicsi\n");
-        order_list_DB.add("Popcorn kicsi");
+        order_list_DB.add("p_s");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Popcorn_kozepes(ActionEvent event) {
-        order_list.add("Popcorn közepes\n");
-        order_list_DB.add("Popcorn közepes");
+    void Popcorn_kozepes() {
+        order_list.add("popcorn közepes\n");
+        order_list_DB.add("p_m");
         Orders_list.setText(String.valueOf(order_list));
     }
 
     @FXML
-    void Popcorn_nagy(ActionEvent event) {
+    void Popcorn_nagy() {
         order_list.add("Popcorn nagy\n");
-        order_list_DB.add("Popcorn nagy");
+        order_list_DB.add("p_l");
         Orders_list.setText(String.valueOf(order_list));
     }
-
-
-
-    void Meal_save(List<String> order_list) throws IOException {
-        try {
-            FileWriter myWriter = new FileWriter("src/main/resources/DB/Current_order.txt", true);
-            BufferedWriter bw = new BufferedWriter(myWriter);
-            bw.write(order_list + ";");
-            bw.close();
-            System.out.println("Successfully wrote the meals to the file: Current_order ");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-}
 }

@@ -10,32 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
+import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.TreeMap;
 
-public class SummaryController implements Initializable {
-    @FXML
-    void BackButtonPushed(ActionEvent event) throws IOException {
-        Parent Back_to_Meal = FXMLLoader.load(getClass().getResource("/fxml/Meal_Select.fxml") );
-        Scene Meal_scene = new Scene(Back_to_Meal);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(Meal_scene);
-        window.show();
-    }
+public class SummaryController implements Initializable{
 
-    @FXML
-    void NextButtonPushed(ActionEvent event) throws IOException {
-        Parent Next_to_End = FXMLLoader.load(getClass().getResource("/fxml/END_Scene.fxml") );
-        Scene End_scene = new Scene(Next_to_End);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(End_scene);
-        window.show();
-    }
     @FXML
     private Label ID_Label;
 
@@ -51,48 +33,98 @@ public class SummaryController implements Initializable {
     @FXML
     private Label Seat_label;
 
+    @FXML
+    void BackToMealPushed(ActionEvent event) throws Exception {
+        MainApp.order.setEtel_ital(null);
+        MealSelectController.order_list.clear();
+        MealSelectController.order_list_DB.clear();
 
-    String Current_order;
-    String[] tokens;
-    String ID,FILM,TIME,SEAT,MEAL;
-
-    String Current_order_open() throws IOException {
-        File file = new File("src/main/resources/DB/Current_order.txt");
-        BufferedReader br = new BufferedReader(new FileReader(file));
-
-        String st;
-        while ((st = br.readLine()) != null){
-            tokens= st.split(";");
-            System.out.println(st);
-        }
-
-
-        ID =tokens[0];
-        FILM =tokens[1];
-        TIME =tokens[2];
-        SEAT =tokens[3];
-        MEAL =tokens[4];
-
-
-        return Current_order;
+        Parent Back_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
+        Scene Meal_scene = new Scene(Back_to_Meal);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(Meal_scene);
+        window.show();
     }
 
+    @FXML
+    void NextToEndScenePushed(ActionEvent event) throws Exception {
+        OrderDAO oDAO = new JpaOrderDAO();
+        oDAO.saveOrder(MainApp.order);
+        oDAO.close();
 
+        MealSelectController.order_list.clear();
+        MealSelectController.order_list_DB.clear();
 
+        Parent Next_to_End = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/END_Scene.fxml")));
+        Scene End_scene = new Scene(Next_to_End);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(End_scene);
+        window.show();
+    }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            Current_order_open();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void initialize(URL url, ResourceBundle rb) {
+        //sorszam
+        ID_Label.setText(String.valueOf(MainApp.order.getId()));
+
+        //Film címe
+        Film_Label.setText(MainApp.order.getFilm_cim());
+
+        //Datum és ido
+        Time_label.setText(MainApp.order.getDp() + " " + MainApp.order.getIdopont());
+
+        if (MealSelectController.order_list_DB.size() != 0) {
+            //Etel_ital
+            String[] tomb = MainApp.order.getEtel_ital().split(";");
+            StringBuilder meal = new StringBuilder();
+
+            Map<String, Integer> map = new TreeMap<>();
+
+            for (String s : tomb) {
+                String str = switch (s) {
+                    case "c_s" -> "Cola (kicsi)";
+                    case "c_m" -> "Cola (közepes)";
+                    case "c_l" -> "Cola (nagy)";
+                    case "f_s" -> "Fanta (kicsi)";
+                    case "f_m" -> "Fanta (közepes)";
+                    case "f_l" -> "Fanta (nagy)";
+                    case "p_s" -> "Popcorn (kicsi)";
+                    case "p_m" -> "Popcorn (közepes)";
+                    case "p_l" -> "Popcorn (nagy)";
+                    case "n_s" -> "Nachos (kicsi)";
+                    case "n_m" -> "Nachos (közepes)";
+                    case "n_l" -> "Nachos (nagy)";
+                    default -> null;
+                };
+                if (map.containsKey(str)) {
+                    int x = map.get(str);
+                    x++;
+                    map.put(str, x);
+                } else
+                    map.put(str, 1);
+            }
+
+            for (Map.Entry<String, Integer> entry : map.entrySet()) {
+                meal.append(entry.getValue()).append(" * ").append(entry.getKey()).append("\n");
+            }
+            Meal_label.setText(meal.toString());
         }
+        else
+            Meal_label.setText("Nem rendelt.");
 
+        //Ülőhely
+        String[] tomb2 = MainApp.order.getUlo_hely().split(";");
+        StringBuilder seat = new StringBuilder();
 
-        ID_Label.setText(ID);
-        Film_Label.setText(FILM);
-        Time_label.setText(TIME);
-        Meal_label.setText(SEAT);
-        Seat_label.setText(MEAL);
+        for (int i = 0; i < tomb2.length; i++) {
+            seat.append(tomb2[i]);
+            if (i != tomb2.length - 1)
+                seat.append(", ");
+            else
+                seat.append(".");
+        }
+        Seat_label.setText(seat.toString());
     }
+
+
 }

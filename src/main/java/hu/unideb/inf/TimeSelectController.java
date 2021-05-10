@@ -9,20 +9,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
-import javax.xml.crypto.Data;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class TimeSelectController {
-    String Date_Time;
-    String time;
-    LocalDate ld;
-
     @FXML
-    void BackButtonPushed(javafx.event.ActionEvent event) throws IOException {
-        Parent Back_to_Film_Select= FXMLLoader.load(getClass().getResource("/fxml/Film_Select.fxml") );
+    void BackToFilmSelectPushed(javafx.event.ActionEvent event) throws Exception {
+        MainApp.order.setFilm_cim(null);
+
+        Parent Back_to_Film_Select= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Film_Select.fxml")));
         Scene Film_Select_scene = new Scene(Back_to_Film_Select);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(Film_Select_scene);
@@ -30,71 +25,42 @@ public class TimeSelectController {
     }
 
     @FXML
-    void NextButtonPushed(ActionEvent event) throws IOException {
-        Parent Next_to_Sit_Place = FXMLLoader.load(getClass().getResource("/fxml/Sit_Place_Select.fxml") );
+    void NextToSitPlaceSelectPushed(ActionEvent event) throws Exception {
+        Parent Next_to_Sit_Place = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Sit_Place_Select.fxml")));
         Scene Sit_Select_scene = new Scene(Next_to_Sit_Place);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(Sit_Select_scene);
         window.show();
     }
 
+    @FXML
+    public DatePicker dp = null;
 
     @FXML
-    private DatePicker dp;
-
-    @FXML
-    void DatePickePicked(ActionEvent event) {
-        ld = dp.getValue();
-        System.out.println("picked date : "+ld);
-    }
-
-
-    @FXML
-    void Time1(ActionEvent event) throws IOException {
-        time="10:00-12:30";
-        time_changer(time,ld);
-        Date_save(time_changer(time,ld));
-        NextButtonPushed(event);
+    void DatePickePicked() {
+        String date = dp.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        MainApp.order.setDp(date);
     }
 
     @FXML
-    void Time2(ActionEvent event) throws IOException {
-        time="10:00-12:30";
-        time_changer(time,ld);
-        Date_save(time_changer(time,ld));
-        NextButtonPushed(event);
+    void Time1(ActionEvent event) throws Exception {
+        MainApp.order.setIdopont("10:00 - 12:30");
+        NextToSitPlaceSelectPushed(event);
+    }
+
+    @FXML
+    void Time2(ActionEvent event) throws Exception {
+        MainApp.order.setIdopont("13:00 - 14:30");
+        NextToSitPlaceSelectPushed(event);
     }
     @FXML
-    void Time3(ActionEvent event) throws IOException {
-        time="10:00-12:30";
-        Date_save(time_changer(time,ld));
-        NextButtonPushed(event);
+    void Time3(ActionEvent event) throws Exception {
+        MainApp.order.setIdopont("15:00 - 16:30");
+        NextToSitPlaceSelectPushed(event);
     }
     @FXML
-    void Time4(ActionEvent event) throws IOException {
-        time="10:00-12:30";
-        Date_save(time_changer(time,ld));
-        NextButtonPushed(event);
+    void Time4(ActionEvent event) throws Exception {
+        MainApp.order.setIdopont("17:00 - 18:30");
+        NextToSitPlaceSelectPushed(event);
     }
-
-    void Date_save(String Date_Time) throws IOException {
-        try {
-            FileWriter myWriter = new FileWriter("src/main/resources/DB/Current_order.txt",true);
-            BufferedWriter bw = new BufferedWriter(myWriter);
-            bw.write(Date_Time+";");
-            bw.close();
-            System.out.println("Successfully wrote the time to the file: Current_order ");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
-    String time_changer(String date ,LocalDate ld )
-    {
-        Date_Time =date+" "+ld;
-        System.out.println(Date_Time);
-        return Date_Time;
-    }
-
-
 }

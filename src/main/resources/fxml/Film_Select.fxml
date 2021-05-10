@@ -18,7 +18,7 @@
                   <Font size="41.0" />
                </font>
             </Label>
-            <Button layoutX="89.0" layoutY="635.0" mnemonicParsing="false" onAction="#BackButtonPushed" style="-fx-background-color: F5821E;" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
+            <Button layoutX="89.0" layoutY="635.0" mnemonicParsing="false" onAction="#BackToMenuPushed" style="-fx-background-color: F5821E;" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
             <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@../images/71+ncdWcmRL.png" />
