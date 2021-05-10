@@ -12,10 +12,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SitPlaceSelectController implements Initializable {
     @FXML
@@ -78,9 +75,31 @@ public class SitPlaceSelectController implements Initializable {
         }
     }
 
+    public List<String> foglalt_helyek = new ArrayList<>();
+    public List<Order> o_list = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        OrderDAO oDAO = new JpaOrderDAO();
+
+        o_list = oDAO.getOrders();
+        for (Order o : o_list) {
+            String[] ulohelyek = o.getUlo_hely().split(";");
+            Collections.addAll(foglalt_helyek, ulohelyek);
+        }
+
+
+        //a foglalt_helyek változóban az összes foglalt hely szerepel Stringként
+
+
+
+
+        try {
+            oDAO.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }
