@@ -13,7 +13,7 @@
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="200" layoutY="70.0" text="Válogass legújabb filmeink között" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.4">
+            <Label id="textura" alignment="CENTER" contentDisplay="CENTER" layoutX="144.0" layoutY="71.0" prefHeight="59.0" prefWidth="792.0" text="Válogass legújabb filmeink között" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="144.0">
                <font>
                   <Font size="41.0" />
                </font>
@@ -24,7 +24,7 @@
                   <Image url="@../images/71+ncdWcmRL.png" />
                </image>
             </ImageView>
-            <Pane layoutX="14.0" layoutY="165.0" prefHeight="375.0" prefWidth="511.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50,50;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="555.0">
+            <Pane layoutX="14.0" layoutY="165.0" prefHeight="375.0" prefWidth="367.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50,50;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="555.0">
                <children>
                   <Button contentDisplay="RIGHT" layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#film1" prefHeight="0.0" prefWidth="140.0" text="Film kiválasztása" />
                   <ImageView fitHeight="303.0" fitWidth="200.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">

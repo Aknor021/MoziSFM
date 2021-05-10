@@ -42,7 +42,8 @@
 }
 
 
-.text_textura{
+#textura{
     -fx-font-family: 'Russo One', sans-serif;
-    color :#2b1d14;
-}
+    -fx-text-fill: #F5821E;
+    -fx-effect: dropshadow(gaussian, rgba(255, 80, 80, 0.5), 10, 0.8, 0, 0);
+    }

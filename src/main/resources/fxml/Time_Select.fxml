@@ -13,7 +13,7 @@
   <content>
     <AnchorPane prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label layoutX="100.0" layoutY="70.0" text="Időpont kiválasztása">
+            <Label id="textura" layoutX="100.0" layoutY="70.0" text="Időpont kiválasztása">
                <font>
                   <Font size="40.0" />
                </font>

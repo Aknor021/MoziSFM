@@ -12,7 +12,7 @@
    <content>
       <AnchorPane prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="144.0" layoutY="66.0" prefHeight="62.0" prefWidth="807.0" styleClass="text_textura" stylesheets="@../styles/Styles.css" text="Üdvözlünk a Csillámpóni moziban!" textAlignment="CENTER" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="66.0">
+            <Label id="textura" alignment="CENTER" contentDisplay="CENTER" layoutX="144.0" layoutY="66.0" styleClass="text_textura" stylesheets="@../styles/Styles.css" text="Üdvözlünk a Csillámpóni moziban!" textAlignment="CENTER" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="66.0">
                <font>
                   <Font size="42.0" />
                </font>

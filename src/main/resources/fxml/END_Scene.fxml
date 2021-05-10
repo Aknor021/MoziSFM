@@ -7,18 +7,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.TextFlow?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.ENDSceneController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label layoutX="352.0" layoutY="66.0" text="Köszönjük foglását">
+            <Label id="textura" layoutX="352.0" layoutY="66.0" text="Köszönjük foglását">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-            <Label layoutX="495.0" layoutY="345.0" text="sok blabla">
+            <Label id="textura" layoutX="495.0" layoutY="345.0" text="sok blabla">
                <font>
                   <Font size="20.0" />
                </font>
@@ -29,12 +28,12 @@
                   <Image url="@../images/71+ncdWcmRL.png" />
                </image>
             </ImageView>
-            <Label layoutX="212.0" layoutY="197.0" prefHeight="39.0" prefWidth="188.0" text="Sroszámod :">
+            <Label id="textura" layoutX="212.0" layoutY="197.0" prefHeight="39.0" prefWidth="188.0" text="Sroszámod :">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextFlow fx:id="szorszam_label" layoutX="336.0" layoutY="202.0" prefHeight="31.0" prefWidth="154.0" />
+            <Label id="textura" fx:id="sorszam" layoutX="352.0" layoutY="197.0" prefHeight="35.0" prefWidth="401.0" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

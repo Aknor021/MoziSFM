@@ -12,7 +12,7 @@
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label layoutX="100.0" layoutY="70.0" text="Összegzés">
+            <Label id="textura" layoutX="100.0" layoutY="70.0" text="Összegzés">
                <font>
                   <Font size="40.0" />
                </font>
@@ -24,16 +24,16 @@
                   <Image url="@../images/71+ncdWcmRL.png" />
                </image>
             </ImageView>
-            <Label layoutX="142.0" layoutY="207.0" prefHeight="20.0" prefWidth="100.0" text="Sorszámod :" />
-            <Label fx:id="ID_Label" layoutX="242.0" layoutY="207.0" prefHeight="20.0" prefWidth="243.0" />
-            <Label layoutX="142.0" layoutY="242.0" prefHeight="20.0" prefWidth="100.0" text="Film :" />
-            <Label fx:id="Film_Label" layoutX="242.0" layoutY="242.0" prefHeight="20.0" prefWidth="247.0" />
-            <Label layoutX="142.0" layoutY="282.0" prefHeight="20.0" prefWidth="100.0" text="Időpont :" />
-            <Label fx:id="Time_label" layoutX="242.0" layoutY="282.0" prefHeight="20.0" prefWidth="182.0" />
-            <Label layoutX="142.0" layoutY="320.0" prefHeight="20.0" prefWidth="100.0" text="Ülőhely : " />
-            <Label layoutX="142.0" layoutY="360.0" prefHeight="20.0" prefWidth="100.0" text="Nasi +innivaló :" />
-            <Label fx:id="Meal_label" alignment="TOP_LEFT" layoutX="242.0" layoutY="360.0" prefHeight="174.0" prefWidth="338.0" />
-            <Label fx:id="Seat_label" layoutX="242.0" layoutY="320.0" prefHeight="20.0" prefWidth="248.0" />
+            <Label id="textura" layoutX="142.0" layoutY="207.0" prefHeight="20.0" prefWidth="100.0" text="Sorszámod :" />
+            <Label id="textura" fx:id="ID_Label" layoutX="242.0" layoutY="207.0" prefHeight="20.0" prefWidth="243.0" />
+            <Label id="textura" layoutX="142.0" layoutY="242.0" prefHeight="20.0" prefWidth="100.0" text="Film :" />
+            <Label id="textura" fx:id="Film_Label" layoutX="242.0" layoutY="242.0" prefHeight="20.0" prefWidth="247.0" />
+            <Label id="textura" layoutX="142.0" layoutY="282.0" prefHeight="20.0" prefWidth="100.0" text="Időpont :" />
+            <Label id="textura" fx:id="Time_label" layoutX="242.0" layoutY="282.0" prefHeight="20.0" prefWidth="182.0" />
+            <Label id="textura" layoutX="142.0" layoutY="320.0" prefHeight="20.0" prefWidth="100.0" text="Ülőhely : " />
+            <Label id="textura" layoutX="142.0" layoutY="360.0" prefHeight="20.0" prefWidth="100.0" text="Nasi +innivaló :" />
+            <Label id="textura" fx:id="Meal_label" alignment="TOP_LEFT" layoutX="242.0" layoutY="360.0" prefHeight="174.0" prefWidth="338.0" />
+            <Label id="textura" fx:id="Seat_label" layoutX="242.0" layoutY="320.0" prefHeight="20.0" prefWidth="248.0" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

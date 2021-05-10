@@ -16,7 +16,7 @@
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label layoutX="100.0" layoutY="70.0" text="Ülőhely kiválasztás">
+            <Label id="textura" layoutX="100.0" layoutY="70.0" text="Ülőhely kiválasztás">
                <font>
                   <Font size="40.0" />
                </font>
@@ -48,19 +48,19 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="A sor" GridPane.valignment="CENTER" />
-                  <Label text="B sor" GridPane.rowIndex="1" />
-                  <Label text="C sor" GridPane.rowIndex="2" />
-                   <Label text="D sor" GridPane.rowIndex="3" />
-                   <Label text="E sor" GridPane.rowIndex="4" />
-                   <Label text="F sor" GridPane.rowIndex="5" />
+                  <Label id="textura" text="A sor" GridPane.valignment="CENTER" />
+                  <Label id="textura" text="B sor" GridPane.rowIndex="1" />
+                  <Label id="textura" text="C sor" GridPane.rowIndex="2" />
+                   <Label id="textura" text="D sor" GridPane.rowIndex="3" />
+                   <Label id="textura" text="E sor" GridPane.rowIndex="4" />
+                   <Label id="textura" text="F sor" GridPane.rowIndex="5" />
 
-                  <Label text="1. oszlop" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                  <Label text="2. oszlop" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                  <Label text="3.oszlop" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                   <Label text="4.oszlop" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                   <Label text="5. oszlop" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                   <Label text="6. oszlop" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Label id="textura" text="1. oszlop" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Label id="textura" text="2. oszlop" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Label id="textura" text="3.oszlop" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                   <Label id="textura" text="4.oszlop" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                   <Label id="textura" text="5. oszlop" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                   <Label id="textura" text="6. oszlop" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
 
                   <Button fx:id="A1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A1" GridPane.columnIndex="1" />
                   <Button fx:id="B1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="B1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -108,19 +108,23 @@
             </GridPane>
             <Pane layoutX="360.0" layoutY="175.0" prefHeight="26.0" prefWidth="602.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50 50;">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="-4.0" prefHeight="34.0" prefWidth="604.0" text="Vászon" textAlignment="CENTER" textFill="WHITE">
+                  <Label id="textura" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="-4.0" prefHeight="34.0" prefWidth="604.0" text="Vászon" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
                </children></Pane>
             <Label fx:id="choice_box_display" layoutX="41.0" layoutY="282.0" prefHeight="28.0" prefWidth="157.0" />
-            <Label fx:id="Selected_Seat_Label" layoutX="478.0" layoutY="560.0" prefHeight="26.0" prefWidth="511.0" />
-            <Label layoutX="292.0" layoutY="557.0" prefHeight="32.0" prefWidth="136.0" text="Választott ülőhelyek:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            <Pane layoutX="288.0" layoutY="560.0" prefHeight="26.0" prefWidth="678.0" style="-fx-background-color: #2b1d14; -fx-opacity: 1; -fx-background-radius: 50 50;">
+               <children>
+                  <Label id="textura" layoutX="10.0" layoutY="-3.0" prefHeight="32.0" prefWidth="182.0" text="Választott ülőhelyek:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label id="textura" fx:id="Selected_Seat_Label" layoutX="167.0" prefHeight="26.0" prefWidth="511.0" />
+               </children>
+            </Pane>
          </children></AnchorPane>
   </content>
 </ScrollPane>
