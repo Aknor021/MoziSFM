@@ -28,7 +28,7 @@
             </Label>
             <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="989.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <image>
-                  <Image url="@../images/71+ncdWcmRL.png" />
+                  <Image url="@../images/Other_pics/71+ncdWcmRL.png" />
                </image>
             </ImageView>
          </children>

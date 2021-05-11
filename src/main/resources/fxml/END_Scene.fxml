@@ -22,10 +22,10 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button layoutX="474.0" layoutY="585.0" mnemonicParsing="false" onAction="#NextButtonPushed" text="Vissza a főoldalra" />
+            <Button layoutX="474.0" layoutY="585.0" mnemonicParsing="false" onAction="#NextButtonPushed" styleClass="button2" text="Vissza a főoldalra" />
              <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
-                  <Image url="@../images/71+ncdWcmRL.png" />
+                  <Image url="@../images/Other_pics/71+ncdWcmRL.png" />
                </image>
             </ImageView>
             <Label id="textura" layoutX="212.0" layoutY="197.0" prefHeight="39.0" prefWidth="188.0" text="Sroszámod :">

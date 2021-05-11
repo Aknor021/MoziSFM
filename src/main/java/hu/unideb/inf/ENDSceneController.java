@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.scene.control.Label;
@@ -31,16 +33,20 @@ public class ENDSceneController implements Initializable {
     @FXML
     public Label sorszam;
 
-    //public List<Order> o_list = new ArrayList<>();
+    public List<Order> o_list = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //OrderDAO oDAO = new JpaOrderDAO();
+        OrderDAO oDAO = new JpaOrderDAO();
 
-        //o_list = oDAO.getOrders();
-        //Order order = o_list.get(o_list.size() - 1);
-        sorszam.setText("sikerult");
+        o_list = oDAO.getOrders();
+        Order order = o_list.get(o_list.size() - 1);
+        sorszam.setText(String.valueOf(order.getId()));
 
-
+        try {
+            oDAO.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

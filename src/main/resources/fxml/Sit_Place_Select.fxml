@@ -21,11 +21,11 @@
                   <Font size="40.0" />
                </font>
             </Label>
-            <Button layoutX="64.0" layoutY="619.0" mnemonicParsing="false" onAction="#BackToTimeSelectPushed" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
-            <Button layoutX="829.0" layoutY="619.0" mnemonicParsing="false" onAction="#NextToMealSelectPushed" prefWidth="240.0" text="Tovább a nasi kiválasztására" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="40.0" />
+            <Button layoutX="64.0" layoutY="619.0" mnemonicParsing="false" onAction="#BackToTimeSelectPushed" styleClass="button2" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
+            <Button layoutX="829.0" layoutY="619.0" mnemonicParsing="false" onAction="#NextToMealSelectPushed" prefWidth="240.0" styleClass="button2" text="Tovább a nasi kiválasztására" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="40.0" />
              <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
-                  <Image url="@../images/71+ncdWcmRL.png" />
+                  <Image url="@../images/Other_pics/71+ncdWcmRL.png" />
                </image>
             </ImageView>
             <GridPane layoutX="265.0" layoutY="222.0" prefHeight="318.0" prefWidth="685.0">
@@ -62,47 +62,47 @@
                    <Label id="textura" text="5. oszlop" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
                    <Label id="textura" text="6. oszlop" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
 
-                  <Button fx:id="A1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A1" GridPane.columnIndex="1" />
-                  <Button fx:id="B1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="B1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button fx:id="C1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="C1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                   <Button fx:id="D1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="D1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                   <Button fx:id="E1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="E1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                   <Button fx:id="F1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="F1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Button fx:id="A1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="A1" GridPane.columnIndex="1" />
+                  <Button fx:id="B1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="B1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="C1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="C1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                   <Button fx:id="D1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="D1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                   <Button fx:id="E1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="E1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                   <Button fx:id="F1" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="F1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-                   <Button fx:id="A2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A2" GridPane.columnIndex="2" />
-                  <Button fx:id="B2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="B2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button fx:id="C2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="C2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                   <Button fx:id="D2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="D2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                   <Button fx:id="E2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="E2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                   <Button fx:id="F2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="F2" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                   <Button fx:id="A2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="A2" GridPane.columnIndex="2" />
+                  <Button fx:id="B2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="B2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button fx:id="C2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="C2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                   <Button fx:id="D2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="D2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                   <Button fx:id="E2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="E2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                   <Button fx:id="F2" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="F2" GridPane.columnIndex="2" GridPane.rowIndex="5" />
 
-                   <Button fx:id="A3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A3" GridPane.columnIndex="3" />
-                   <Button fx:id="B3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="B3" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                   <Button fx:id="C3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="C3" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                   <Button fx:id="D3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="D3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                   <Button fx:id="E3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="E3" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                   <Button fx:id="F3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="F3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                   <Button fx:id="A3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="A3" GridPane.columnIndex="3" />
+                   <Button fx:id="B3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="B3" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                   <Button fx:id="C3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="C3" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                   <Button fx:id="D3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="D3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                   <Button fx:id="E3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="E3" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                   <Button fx:id="F3" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="F3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
 
-                   <Button fx:id="A4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A4" GridPane.columnIndex="4" />
-                   <Button fx:id="B4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="B4" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                   <Button fx:id="C4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="C4" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                   <Button fx:id="D4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="D4" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                   <Button fx:id="E4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="E4" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                   <Button fx:id="F4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="F4" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                   <Button fx:id="A4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="A4" GridPane.columnIndex="4" />
+                   <Button fx:id="B4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="B4" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                   <Button fx:id="C4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="C4" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                   <Button fx:id="D4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="D4" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                   <Button fx:id="E4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="E4" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                   <Button fx:id="F4" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="F4" GridPane.columnIndex="4" GridPane.rowIndex="5" />
 
-                   <Button fx:id="A5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A5" GridPane.columnIndex="5" />
-                   <Button fx:id="B5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="B5" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                   <Button fx:id="C5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="C5" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                   <Button fx:id="D5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="D5" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                   <Button fx:id="E5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="E5" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                   <Button fx:id="F5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="F5" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                   <Button fx:id="A5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="A5" GridPane.columnIndex="5" />
+                   <Button fx:id="B5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="B5" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                   <Button fx:id="C5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="C5" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                   <Button fx:id="D5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="D5" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                   <Button fx:id="E5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="E5" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                   <Button fx:id="F5" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="F5" GridPane.columnIndex="5" GridPane.rowIndex="5" />
 
-                   <Button fx:id="A6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="A6" GridPane.columnIndex="6" />
-                   <Button fx:id="B6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="B6" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                   <Button fx:id="C6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="C6" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                   <Button fx:id="D6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="D6" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                   <Button fx:id="E6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="E6" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                   <Button fx:id="F6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button" text="F6" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                   <Button fx:id="A6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="A6" GridPane.columnIndex="6" />
+                   <Button fx:id="B6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="B6" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                   <Button fx:id="C6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="C6" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                   <Button fx:id="D6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="D6" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                   <Button fx:id="E6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="E6" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                   <Button fx:id="F6" mnemonicParsing="false" onAction="#SeatButton" styleClass="button2" text="F6" GridPane.columnIndex="6" GridPane.rowIndex="5" />
 
                </children>
             </GridPane>

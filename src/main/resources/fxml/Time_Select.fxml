@@ -21,7 +21,7 @@
             <Button layoutX="71.0" layoutY="638.0" mnemonicParsing="false" onAction="#BackToFilmSelectPushed" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
              <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
-                  <Image url="@../images/71+ncdWcmRL.png" />
+                  <Image url="@../images/Other_pics/71+ncdWcmRL.png" />
                </image></ImageView>
             <DatePicker fx:id="dp" layoutX="149.0" layoutY="224.0" onAction="#DatePickePicked" prefHeight="50.0" prefWidth="260.0" showWeekNumbers="true" />
             <Button layoutX="621.0" layoutY="221.0" mnemonicParsing="false" onAction="#Time1" prefHeight="55.0" prefWidth="224.0" styleClass="timebutton" text="10:00 - 12:30 ">

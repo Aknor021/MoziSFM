@@ -19,8 +19,6 @@ public class SitPlaceSelectController {
     void BackToTimeSelectPushed(javafx.event.ActionEvent event) throws Exception {
         MainApp.order.setIdopont(null);
         MainApp.order.setDp(null);
-
-
         Parent Back_to_Time = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Time_Select.fxml")));
         Scene Time_scene = new Scene(Back_to_Time);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
