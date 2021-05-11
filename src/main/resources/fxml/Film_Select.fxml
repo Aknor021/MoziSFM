@@ -6,64 +6,68 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1061.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.FilmSelectController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.FilmSelectController">
    <content>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1060.0" prefWidth="1080.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="200" layoutY="70.0" text="Válogass legújabb filmeink között" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.4">
+            <Label id="textura" alignment="CENTER" contentDisplay="CENTER" layoutX="144.0" layoutY="71.0" prefHeight="59.0" prefWidth="792.0" text="Válogass legújabb filmeink között" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="144.0">
                <font>
                   <Font size="41.0" />
                </font>
             </Label>
-            <Button layoutX="89.0" layoutY="635.0" mnemonicParsing="false" onAction="#BackToMenuPushed" style="-fx-background-color: F5821E;" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
+            <Button layoutX="43.0" layoutY="655.0" mnemonicParsing="false" onAction="#BackToMenuPushed" style="-fx-background-color: F5821E;" text="Vissza" AnchorPane.bottomAnchor="39.39999999999998" AnchorPane.leftAnchor="43.0" />
             <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
-                  <Image url="@../images/71+ncdWcmRL.png" />
+                  <Image url="@../images/Other_pics/71+ncdWcmRL.png" />
                </image>
             </ImageView>
-            <Pane layoutX="14.0" layoutY="165.0" prefHeight="375.0" prefWidth="511.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50,50;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="555.0">
+            <GridPane alignment="CENTER_LEFT" layoutX="93.0" layoutY="165.0" prefHeight="461.0" prefWidth="866.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="233.60001220703126" minHeight="10.0" prefHeight="199.39999389648438" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="288.0000122070312" minHeight="10.0" prefHeight="40.20000610351562" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="288.0000122070312" minHeight="10.0" prefHeight="184.60004882812498" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="288.0000122070312" minHeight="10.0" prefHeight="42.199951171875" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <Button contentDisplay="RIGHT" layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#film1" prefHeight="0.0" prefWidth="140.0" text="Film kiválasztása" />
-                  <ImageView fitHeight="303.0" fitWidth="200.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/Free Guy.jpg" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="Free_Guy13" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/Free_Guy.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="4" />
+                  <Button fx:id="David_Copperfield" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/David_copperfield.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" />
+                  <Button fx:id="Az_apáca" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/Az_apáca.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="1" />
+                  <Button fx:id="Deadpool" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/Deadpool.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="2" />
+                  <Button fx:id="Fekete_Ozvegy" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="115.0" style="-fx-background-image: url(/images/film_pics/Fekete_Ozvegy.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="3" />
+                  <Button fx:id="Lelki_Ismeretek" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/Lelki_Ismeretek.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.rowIndex="2" />
+                  <Button fx:id="doorman" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/doorman.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="Szellemirtok" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/Szellemirtok.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button fx:id="hivatlan" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/hivatlan.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Button fx:id="monster_hunter" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/monster_hunter.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Button fx:id="spiral" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/spiral.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Button fx:id="Aquaman" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#film1" prefHeight="170.0" prefWidth="120.0" style="-fx-background-image: url(/images/film_pics/Aquaman.jpg); -fx-background-repeat: no-repeat;" styleClass="film_button" GridPane.columnIndex="5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="David Copperfield" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Az apáca" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Deadpool" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Fekete özvegy" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Lelki Ismeretek" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Doorman" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Szellemirtok" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Hivatlan" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Monster hunter" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Spirál" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Aquaman" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="137.0" styleClass="filmtext" text="Free Guy" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                </children>
-            </Pane>
-            <Pane layoutX="548.0" layoutY="165.0" prefHeight="375.0" prefWidth="511.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50,50;" styleClass="filmpane">
-               <children>
-                  <Button contentDisplay="RIGHT" layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#film2" prefHeight="0.0" prefWidth="140.0" text="Film kiválasztása" />
-                  <ImageView fitHeight="303.0" fitWidth="200.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/Fekete Ozvegy.jpg" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="14.0" layoutY="563.0" prefHeight="375.0" prefWidth="511.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50,50;" styleClass="filmpane">
-               <children>
-                  <Button contentDisplay="RIGHT" layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#film3" prefHeight="0.0" prefWidth="140.0" text="Film kiválasztása" />
-                  <ImageView fitHeight="303.0" fitWidth="200.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/Lelki Ismeretek.jpg" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane layoutX="548.0" layoutY="563.0" prefHeight="375.0" prefWidth="511.0" style="-fx-background-color: #2b1d14; -fx-background-radius: 50,50;" styleClass="filmpane">
-               <children>
-                  <Button contentDisplay="RIGHT" layoutX="300.0" layoutY="300.0" mnemonicParsing="false" onAction="#film4" prefHeight="0.0" prefWidth="140.0" text="Film kiválasztása" />
-                  <ImageView fitHeight="303.0" fitWidth="200.0" layoutX="57.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/Deadpool.jpg" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
+            </GridPane>
          </children></AnchorPane>
    </content>
 </ScrollPane>
