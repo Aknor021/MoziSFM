@@ -65,7 +65,7 @@ public class SummaryController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //sorszam
-        ID_Label.setText(String.valueOf(MainApp.order.getId()));
+        //ID_Label.setText(String.valueOf(MainApp.order.getId()));
 
         //Film címe
         Film_Label.setText(MainApp.order.getFilm_cim());

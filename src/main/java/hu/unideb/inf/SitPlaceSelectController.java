@@ -3,6 +3,7 @@ package hu.unideb.inf;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,11 +11,13 @@ import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class SitPlaceSelectController {
+public class SitPlaceSelectController    {
     @FXML
     void BackToTimeSelectPushed(javafx.event.ActionEvent event) throws Exception {
         MainApp.order.setIdopont(null);
@@ -72,4 +75,9 @@ public class SitPlaceSelectController {
             Seat_list.remove(Seat);
         }
     }
+    /*public void init()
+    {
+
+    }*/
+
 }

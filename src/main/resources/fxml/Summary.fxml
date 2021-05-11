@@ -6,26 +6,26 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.SummaryController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
+            <Pane layoutX="133.0" layoutY="216.0" prefHeight="332.0" prefWidth="465.0" styleClass="panel" />
             <Label id="textura" layoutX="100.0" layoutY="70.0" text="Összegzés">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
             <Button layoutX="64.0" layoutY="618.0" mnemonicParsing="false" onAction="#BackToMealPushed" styleClass="button2" text="Vissza" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="40.0" />
-            <Button layoutX="940.0" layoutY="618.0" mnemonicParsing="false" onAction="#NextToEndScenePushed" prefHeight="26.0" prefWidth="240.0" styleClass="button2" text="Elfogdás" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="40.0" />
+            <Button layoutX="940.0" layoutY="618.0" mnemonicParsing="false" onAction="#NextToEndScenePushed" prefHeight="26.0" prefWidth="240.0" styleClass="button2" text="Elfogadás" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="40.0" />
              <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@../images/Other_pics/71+ncdWcmRL.png" />
                </image>
             </ImageView>
-            <Label id="textura" layoutX="142.0" layoutY="207.0" prefHeight="20.0" prefWidth="100.0" text="Sorszámod :" />
-            <Label id="textura" fx:id="ID_Label" layoutX="242.0" layoutY="207.0" prefHeight="20.0" prefWidth="243.0" />
             <Label id="textura" layoutX="142.0" layoutY="242.0" prefHeight="20.0" prefWidth="100.0" text="Film :" />
             <Label id="textura" fx:id="Film_Label" layoutX="242.0" layoutY="242.0" prefHeight="20.0" prefWidth="247.0" />
             <Label id="textura" layoutX="142.0" layoutY="282.0" prefHeight="20.0" prefWidth="100.0" text="Időpont :" />

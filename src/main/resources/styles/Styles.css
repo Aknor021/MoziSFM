@@ -56,9 +56,12 @@
 }*/
 
 .film_button:hover{
-
     -fx-border-width: 8px;
-    -fx-background-image-radius : 10px;
 
     -fx-border-color: #F5821E;
+}
+.panel{
+    -fx-background-color: #2b1d14;
+    -fx-opacity : 0.5;
+    -fx-background-radius : 20px;
 }
