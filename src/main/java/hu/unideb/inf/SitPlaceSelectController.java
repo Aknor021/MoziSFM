@@ -13,15 +13,19 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.*;
 
 public class SitPlaceSelectController implements Initializable {
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
+public class SitPlaceSelectController    {
     @FXML
     void BackToTimeSelectPushed(javafx.event.ActionEvent event) throws Exception {
         MainApp.order.setIdopont(null);
         MainApp.order.setDp(null);
-
-
         Parent Back_to_Time = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Time_Select.fxml")));
         Scene Time_scene = new Scene(Back_to_Time);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -224,5 +228,10 @@ public class SitPlaceSelectController implements Initializable {
             e.printStackTrace();
         }
     }
+    /*public void init()
+    {
+
+    }*/
+
 }
 

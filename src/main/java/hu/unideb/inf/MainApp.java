@@ -35,6 +35,7 @@ public class MainApp extends Application {
 
         stage.setTitle("Mozi");
         stage.setScene(scene);
+
         stage.show();
     }
 

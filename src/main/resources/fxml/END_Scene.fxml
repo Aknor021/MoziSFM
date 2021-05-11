@@ -1,28 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hu.unideb.inf.ENDSceneController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.ENDSceneController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label layoutX="352.0" layoutY="66.0" text="Köszönjük foglását">
+            <Pane layoutX="225.0" layoutY="170.0" prefHeight="360.0" prefWidth="664.0" styleClass="panel" />
+            <Label id="textura" alignment="CENTER" layoutX="237.0" layoutY="387.0" prefHeight="43.0" prefWidth="622.0" text="Fizetés a jegyek átvételénél !">
                <font>
-                  <Font size="40.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="489.0" layoutY="213.0" text="sok blabla">
+            <Label id="textura" alignment="CENTER" layoutX="237.0" layoutY="440.0" prefHeight="39.0" prefWidth="602.0" text="Jó szórakozást kíván a Csillámpóni team !">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label id="textura" alignment="CENTER" layoutX="237.0" layoutY="270.0" prefHeight="41.0" prefWidth="605.0" text="Köszönöjük hogy a Csillámpóni mozit választotta !" textAlignment="CENTER" underline="true" wrapText="true">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button layoutX="474.0" layoutY="585.0" mnemonicParsing="false" onAction="#NextButtonPushed" text="Vissza a főoldalra" />
+            <Label id="textura" fx:id="sorszam" alignment="CENTER" layoutX="331.0" layoutY="201.0" prefHeight="57.0" prefWidth="406.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label id="textura" layoutX="237.0" layoutY="210.0" prefHeight="39.0" prefWidth="188.0" text="Sorszáma :">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label id="textura" alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="320.0" prefHeight="58.0" prefWidth="615.0" text="A sorszámával tudja átvenni az ön által foglalt jegyeket és az étkeket. Kérjük jegyezze meg vagy ha egy buta fasz akkor írja fel !" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label id="textura" layoutX="352.0" layoutY="66.0" text="Köszönjük fogalását">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Button layoutX="474.0" layoutY="585.0" mnemonicParsing="false" onAction="#NextButtonPushed" styleClass="button2" text="Vissza a főoldalra" />
              <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="973.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
                <image>
-                  <Image url="@../images/71+ncdWcmRL.png" />
+                  <Image url="@../images/Other_pics/71+ncdWcmRL.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

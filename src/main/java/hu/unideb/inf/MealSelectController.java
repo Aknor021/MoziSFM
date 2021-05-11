@@ -20,6 +20,7 @@ public class MealSelectController {
     @FXML
     void ALL_Items_DEL() {
         order_list.clear();
+        order_list_DB.clear();
         Orders_list.setText(String.valueOf(order_list));
 
     }
