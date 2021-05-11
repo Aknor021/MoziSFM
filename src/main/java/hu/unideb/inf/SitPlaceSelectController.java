@@ -73,12 +73,69 @@ public class SitPlaceSelectController implements Initializable {
         {
             if (!(Seat_list.contains(Seat))) {
                 Seat_list.add(Seat);
+                sitPlaceColor(Seat_list, 'g');
+
             } else {
                 Seat_list.remove(Seat);
+                List<String> torolt = new ArrayList<>();
+                torolt.add(Seat);
+                sitPlaceColor(torolt, 'o');
+                torolt.clear();
             }
         }
     }
 
+    public void sitPlaceColor(List<String> helyek, char c) {
+        String style = null;
+        if (c == 'r')
+            style = "-fx-background-color: #FF0000;";
+        else if(c == 'g')
+            style = "-fx-background-color: #00FF00;";
+        else if(c == 'o')
+            style = "-fx-background-color: #F5821E;";
+
+
+        for (String s : helyek) {
+            switch (s) {
+                case "A1" -> A1.setStyle(style);
+                case "A2" -> A2.setStyle(style);
+                case "A3" -> A3.setStyle(style);
+                case "A4" -> A4.setStyle(style);
+                case "A5" -> A5.setStyle(style);
+                case "A6" -> A6.setStyle(style);
+                case "B1" -> B1.setStyle(style);
+                case "B2" -> B2.setStyle(style);
+                case "B3" -> B3.setStyle(style);
+                case "B4" -> B4.setStyle(style);
+                case "B5" -> B5.setStyle(style);
+                case "B6" -> B6.setStyle(style);
+                case "C1" -> C1.setStyle(style);
+                case "C2" -> C2.setStyle(style);
+                case "C3" -> C3.setStyle(style);
+                case "C4" -> C4.setStyle(style);
+                case "C5" -> C5.setStyle(style);
+                case "C6" -> C6.setStyle(style);
+                case "D1" -> D1.setStyle(style);
+                case "D2" -> D2.setStyle(style);
+                case "D3" -> D3.setStyle(style);
+                case "D4" -> D4.setStyle(style);
+                case "D5" -> D5.setStyle(style);
+                case "D6" -> D6.setStyle(style);
+                case "E1" -> E1.setStyle(style);
+                case "E2" -> E2.setStyle(style);
+                case "E3" -> E3.setStyle(style);
+                case "E4" -> E4.setStyle(style);
+                case "E5" -> E5.setStyle(style);
+                case "E6" -> E6.setStyle(style);
+                case "F1" -> F1.setStyle(style);
+                case "F2" -> F2.setStyle(style);
+                case "F3" -> F3.setStyle(style);
+                case "F4" -> F4.setStyle(style);
+                case "F5" -> F5.setStyle(style);
+                case "F6" -> F6.setStyle(style);
+            }
+        }
+    }
 
     @FXML
     public Button A1;
@@ -157,61 +214,15 @@ public class SitPlaceSelectController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         OrderDAO oDAO = new JpaOrderDAO();
-
         foglalt_helyek = oDAO.getFoglaltHelyek();
+        sitPlaceColor(foglalt_helyek, 'r');
 
-        String style = "-fx-background-color: #FF0000;";
-
-        for (String s : foglalt_helyek) {
-            switch (s) {
-                case "A1" -> A1.setStyle(style);
-                case "A2" -> A2.setStyle(style);
-                case "A3" -> A3.setStyle(style);
-                case "A4" -> A4.setStyle(style);
-                case "A5" -> A5.setStyle(style);
-                case "A6" -> A6.setStyle(style);
-                case "B1" -> B1.setStyle(style);
-                case "B2" -> B2.setStyle(style);
-                case "B3" -> B3.setStyle(style);
-                case "B4" -> B4.setStyle(style);
-                case "B5" -> B5.setStyle(style);
-                case "B6" -> B6.setStyle(style);
-                case "C1" -> C1.setStyle(style);
-                case "C2" -> C2.setStyle(style);
-                case "C3" -> C3.setStyle(style);
-                case "C4" -> C4.setStyle(style);
-                case "C5" -> C5.setStyle(style);
-                case "C6" -> C6.setStyle(style);
-                case "D1" -> D1.setStyle(style);
-                case "D2" -> D2.setStyle(style);
-                case "D3" -> D3.setStyle(style);
-                case "D4" -> D4.setStyle(style);
-                case "D5" -> D5.setStyle(style);
-                case "D6" -> D6.setStyle(style);
-                case "E1" -> E1.setStyle(style);
-                case "E2" -> E2.setStyle(style);
-                case "E3" -> E3.setStyle(style);
-                case "E4" -> E4.setStyle(style);
-                case "E5" -> E5.setStyle(style);
-                case "E6" -> E6.setStyle(style);
-                case "F1" -> F1.setStyle(style);
-                case "F2" -> F2.setStyle(style);
-                case "F3" -> F3.setStyle(style);
-                case "F4" -> F4.setStyle(style);
-                case "F5" -> F5.setStyle(style);
-                case "F6" -> F6.setStyle(style);
-
-            }
-        }
-
-            try {
-                oDAO.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
+        try {
+            oDAO.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+}
 
