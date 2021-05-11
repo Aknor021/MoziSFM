@@ -11,15 +11,12 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.Map;
-import java.util.Objects;
-import java.util.ResourceBundle;
-import java.util.TreeMap;
+import java.util.*;
 
 public class SummaryController implements Initializable{
 
     @FXML
-    private Label ID_Label;
+    private Label terem_label;
 
     @FXML
     private Label Film_Label;
@@ -64,8 +61,8 @@ public class SummaryController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //sorszam
-        //ID_Label.setText(String.valueOf(MainApp.order.getId()));
+
+        terem_label.setText(Terem());
 
         //Film címe
         Film_Label.setText(MainApp.order.getFilm_cim());
@@ -125,6 +122,15 @@ public class SummaryController implements Initializable{
         }
         Seat_label.setText(seat.toString());
     }
-
-
+    String terem;
+    String Terem()
+    {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 1; i <13 ; i++) {
+            list.add(i);
+        }
+        int n =(int)((Math.random() * (12 - 1)) + 1);
+        terem = String.valueOf(list.get(n));
+        return terem;
+    }
 }
