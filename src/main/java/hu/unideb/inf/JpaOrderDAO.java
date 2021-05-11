@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JpaOrderDAO implements OrderDAO {
@@ -34,6 +35,29 @@ public class JpaOrderDAO implements OrderDAO {
     public List<Order> getOrders() {
         TypedQuery<Order> query = entityManager.createQuery("SELECT o FROM Order o", Order.class);
         return query.getResultList();
+    }
+
+    @Override
+    public List<String> getFoglaltHelyek() {
+        List<String> foglalt_helyek = new ArrayList<>();
+        List<Order> o_list = getOrders();
+
+
+        for (Order o : o_list) {
+            System.out.println("     ---------" + o);
+            String[] ulohelyek = o.getUlo_hely().split(";");
+
+            for (String s : ulohelyek) {
+                if (TimeSelectController.date.equals(o.getDp())
+                        && MainApp.order.getIdopont().equals(o.getIdopont())
+                        && MainApp.order.getFilm_cim().equals(o.getFilm_cim())) {
+                    foglalt_helyek.add(s);
+                }
+            }
+
+
+        }
+        return foglalt_helyek;
     }
 
     @Override

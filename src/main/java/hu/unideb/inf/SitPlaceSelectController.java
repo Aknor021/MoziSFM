@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -23,7 +24,7 @@ public class SitPlaceSelectController implements Initializable {
 
         Parent Back_to_Time = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Time_Select.fxml")));
         Scene Time_scene = new Scene(Back_to_Time);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(Time_scene);
         window.show();
     }
@@ -33,7 +34,7 @@ public class SitPlaceSelectController implements Initializable {
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < Seat_list.size(); i++) {
             str.append(Seat_list.get(i));
-            if(i != (Seat_list.size() - 1))
+            if (i != (Seat_list.size() - 1))
                 str.append(";");
         }
         MainApp.order.setUlo_hely(str.toString());
@@ -41,10 +42,11 @@ public class SitPlaceSelectController implements Initializable {
 
         Parent Next_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
         Scene Meal_scene = new Scene(Next_to_Meal);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(Meal_scene);
         window.show();
     }
+
     @FXML
     private Label Selected_Seat_Label;
 
@@ -54,7 +56,7 @@ public class SitPlaceSelectController implements Initializable {
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < Seat_list.size(); i++) {
-            if(i == Seat_list.size() - 1)
+            if (i == Seat_list.size() - 1)
                 sb.append(Seat_list.get(i));
             else
                 sb.append(Seat_list.get(i)).append(", ");
@@ -66,7 +68,7 @@ public class SitPlaceSelectController implements Initializable {
     String Seat;
 
     public void handle(ActionEvent actionEvent) {
-    Seat =((Control)actionEvent.getSource()).getId();
+        Seat = ((Control) actionEvent.getSource()).getId();
         if (!(Seat_list.contains(Seat))) {
             Seat_list.add(Seat);
         } else {
@@ -75,34 +77,138 @@ public class SitPlaceSelectController implements Initializable {
     }
 
 
-    public List<String> foglalt_helyek = new ArrayList<>();
-    public List<Order> o_list = new ArrayList<>();
+    @FXML
+    public Button A1;
+    @FXML
+    public Button A2;
+    @FXML
+    public Button A3;
+    @FXML
+    public Button A4;
+    @FXML
+    public Button A5;
+    @FXML
+    public Button A6;
+    @FXML
+    public Button B1;
+    @FXML
+    public Button B2;
+    @FXML
+    public Button B3;
+    @FXML
+    public Button B4;
+    @FXML
+    public Button B5;
+    @FXML
+    public Button B6;
+    @FXML
+    public Button C1;
+    @FXML
+    public Button C2;
+    @FXML
+    public Button C3;
+    @FXML
+    public Button C4;
+    @FXML
+    public Button C5;
+    @FXML
+    public Button C6;
+    @FXML
+    public Button D1;
+    @FXML
+    public Button D2;
+    @FXML
+    public Button D3;
+    @FXML
+    public Button D4;
+    @FXML
+    public Button D5;
+    @FXML
+    public Button D6;
+    @FXML
+    public Button E1;
+    @FXML
+    public Button E2;
+    @FXML
+    public Button E3;
+    @FXML
+    public Button E4;
+    @FXML
+    public Button E5;
+    @FXML
+    public Button E6;
+    @FXML
+    public Button F1;
+    @FXML
+    public Button F2;
+    @FXML
+    public Button F3;
+    @FXML
+    public Button F4;
+    @FXML
+    public Button F5;
+    @FXML
+    public Button F6;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<String> foglalt_helyek = new ArrayList<>();
 
         OrderDAO oDAO = new JpaOrderDAO();
 
-        o_list = oDAO.getOrders();
-        for (Order o : o_list) {
-            String[] ulohelyek = o.getUlo_hely().split(";");
+        foglalt_helyek = oDAO.getFoglaltHelyek();
 
-            if(TimeSelectController.date.equals(o.getDp())
-                    && MainApp.order.getIdopont().equals(o.getIdopont())
-                    && MainApp.order.getFilm_cim().equals(o.getFilm_cim()))
-            {
-                Collections.addAll(foglalt_helyek, ulohelyek);
+        String style = "-fx-background-color: #FF0000;";
+
+        for (String s : foglalt_helyek) {
+            switch (s) {
+                case "A1" -> A1.setStyle(style);
+                case "A2" -> A2.setStyle(style);
+                case "A3" -> A3.setStyle(style);
+                case "A4" -> A4.setStyle(style);
+                case "A5" -> A5.setStyle(style);
+                case "A6" -> A6.setStyle(style);
+                case "B1" -> B1.setStyle(style);
+                case "B2" -> B2.setStyle(style);
+                case "B3" -> B3.setStyle(style);
+                case "B4" -> B4.setStyle(style);
+                case "B5" -> B5.setStyle(style);
+                case "B6" -> B6.setStyle(style);
+                case "C1" -> C1.setStyle(style);
+                case "C2" -> C2.setStyle(style);
+                case "C3" -> C3.setStyle(style);
+                case "C4" -> C4.setStyle(style);
+                case "C5" -> C5.setStyle(style);
+                case "C6" -> C6.setStyle(style);
+                case "D1" -> D1.setStyle(style);
+                case "D2" -> D2.setStyle(style);
+                case "D3" -> D3.setStyle(style);
+                case "D4" -> D4.setStyle(style);
+                case "D5" -> D5.setStyle(style);
+                case "D6" -> D6.setStyle(style);
+                case "E1" -> E1.setStyle(style);
+                case "E2" -> E2.setStyle(style);
+                case "E3" -> E3.setStyle(style);
+                case "E4" -> E4.setStyle(style);
+                case "E5" -> E5.setStyle(style);
+                case "E6" -> E6.setStyle(style);
+                case "F1" -> F1.setStyle(style);
+                case "F2" -> F2.setStyle(style);
+                case "F3" -> F3.setStyle(style);
+                case "F4" -> F4.setStyle(style);
+                case "F5" -> F5.setStyle(style);
+                case "F6" -> F6.setStyle(style);
+
             }
         }
-        //a foglalt_helyek változóban az összes foglalt hely szerepel Stringként
 
+            try {
+                oDAO.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-
-        try {
-            oDAO.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-
     }
-}
+
