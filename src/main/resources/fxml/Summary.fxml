@@ -13,8 +13,13 @@
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
-            <Label fx:id="terem_label" layoutX="251.0" layoutY="313.0" prefHeight="18.0" prefWidth="64.0" />
-            <Pane layoutX="133.0" layoutY="231.0" prefHeight="332.0" prefWidth="465.0" styleClass="panel" />
+
+            <Pane layoutX="133.0" layoutY="231.0" prefHeight="332.0" prefWidth="465.0" styleClass="panel">
+               <children>
+                  <Label id="textura" layoutX="225.0" layoutY="85.0" prefHeight="18.0" prefWidth="64.0" />
+
+               </children>
+            </Pane>
             <Label id="textura" layoutX="100.0" layoutY="70.0" text="Összegzés">
                <font>
                   <Font size="40.0" />
@@ -36,7 +41,7 @@
             <Label id="textura" fx:id="Meal_label" alignment="TOP_LEFT" layoutX="242.0" layoutY="377.0" prefHeight="174.0" prefWidth="338.0" />
             <Label id="textura" fx:id="Seat_label" layoutX="242.0" layoutY="340.0" prefHeight="20.0" prefWidth="248.0" />
             <Label id="textura" layoutX="142.0" layoutY="313.0" prefHeight="18.0" prefWidth="64.0" text="Terem:" />
-            <Label id="textura" layoutX="242.0" layoutY="313.0" prefHeight="18.0" prefWidth="64.0" />
+            <Label id="textura" fx:id="terem_label" layoutX="251.0" layoutY="313.0" prefHeight="18.0" prefWidth="64.0" />
          </children></AnchorPane>
   </content>
 </ScrollPane>
