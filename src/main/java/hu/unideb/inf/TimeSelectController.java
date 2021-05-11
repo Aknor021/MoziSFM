@@ -35,10 +35,11 @@ public class TimeSelectController {
 
     @FXML
     public DatePicker dp = null;
+    public static String date;
 
     @FXML
     void DatePickePicked() {
-        String date = dp.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        date = dp.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         MainApp.order.setDp(date);
     }
 

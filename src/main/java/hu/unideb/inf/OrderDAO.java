@@ -7,5 +7,6 @@ public interface OrderDAO extends AutoCloseable{
     void deleteOrder(Order o);
     void updateOrder(Order o);
     List<Order> getOrders();
+    List<String> getFoglaltHelyek();
 
 }
