@@ -69,10 +69,13 @@ public class SitPlaceSelectController implements Initializable {
 
     public void handle(ActionEvent actionEvent) {
         Seat = ((Control) actionEvent.getSource()).getId();
-        if (!(Seat_list.contains(Seat))) {
-            Seat_list.add(Seat);
-        } else {
-            Seat_list.remove(Seat);
+        if(!foglalt_helyek.contains(Seat))
+        {
+            if (!(Seat_list.contains(Seat))) {
+                Seat_list.add(Seat);
+            } else {
+                Seat_list.remove(Seat);
+            }
         }
     }
 
@@ -150,10 +153,10 @@ public class SitPlaceSelectController implements Initializable {
     @FXML
     public Button F6;
 
+    public List<String> foglalt_helyek = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        List<String> foglalt_helyek = new ArrayList<>();
 
         OrderDAO oDAO = new JpaOrderDAO();
 
