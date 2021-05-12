@@ -16,11 +16,14 @@ import javafx.stage.Stage;
 public class FXMLController {
 
     @FXML
-    void ChangeScenePushed(ActionEvent event) throws IOException {
+    public boolean ChangeScenePushed(ActionEvent event) throws IOException {
         Parent Film_Select = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Film_Select.fxml")));
         Scene Film_Scene = new Scene(Film_Select);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(Film_Scene);
         window.show();
+        return true;
     }
+
+
 }

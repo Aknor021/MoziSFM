@@ -41,6 +41,8 @@ public class MealSelectController {
 
     }
 
+    void Label_set(){}
+
     @FXML
     void BackToSitPlacePushed(javafx.event.ActionEvent event) throws Exception {
         MainApp.order.setUlo_hely(null);

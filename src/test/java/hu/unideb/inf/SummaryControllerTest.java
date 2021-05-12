@@ -21,12 +21,13 @@ class SummaryControllerTest {
 
     @BeforeEach
     void setup(){
-        this.summaryController = new SummaryController() ;
-        this.order = new Order();
         this.mainapp = new MainApp();
-        mainapp.order.setFilm_cim("Deadpool");
+        this.mainapp.order = new Order();
+        this.mainapp.order.setFilm_cim("Deadpool");
+        this.summaryController = new SummaryController() ;
     }
-
+    @AfterEach
+    void after(){System.out.println("One test finished");}
 
     @org.junit.jupiter.api.Test
     void backToMealPushed() {
@@ -45,7 +46,6 @@ class SummaryControllerTest {
         String expected = "1";
         String actual;
         actual = summaryController.Terem("Deadpool");
-        System.out.println(actual+" "+expected);
         assertEquals(expected,actual);
 
     }

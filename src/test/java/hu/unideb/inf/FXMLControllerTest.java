@@ -8,8 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FXMLControllerTest {
 
+    private FXMLController fxm;
+
     @BeforeEach
     void setUp() {
+        this.fxm = new FXMLController();
     }
 
     @AfterEach
@@ -18,5 +21,8 @@ class FXMLControllerTest {
 
     @Test
     void changeScenePushed() {
+        boolean act = true;
+        boolean expected = true;
+        assertEquals(expected,act);
     }
 }
