@@ -62,7 +62,8 @@ public class SummaryController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        terem_label.setText(Terem());
+
+        terem_label.setText(Terem(film));
 
         //Film címe
         Film_Label.setText(MainApp.order.getFilm_cim());
@@ -123,14 +124,26 @@ public class SummaryController implements Initializable{
         Seat_label.setText(seat.toString());
     }
     String terem;
-    String Terem()
+    String film = MainApp.order.getFilm_cim();
+
+    public String Terem(String film)
     {
-        List<Integer> list = new ArrayList<>();
-        for (int i = 1; i <13 ; i++) {
-            list.add(i);
+        int n=0 ;
+        switch (film){
+            case "Deadpool" -> n=1;
+            case "Aquaman" -> n=2;
+            case "Az_apáca" -> n=3;
+            case "David_copperfield" -> n=4;
+            case "doorman" -> n=5;
+            case "Fekete_Ozvegy" -> n=6;
+            case "Free_Guy" -> n=7;
+            case "Szellemirtok" -> n=8;
+            case "hivatlan" -> n=9;
+            case "Lelki_Ismeretek" -> n=10;
+            case "monster_hunter" -> n=11;
+            case "spiral" -> n=12;
         }
-        int n =(int)((Math.random() * (12 - 1)) + 1);
-        terem = String.valueOf(list.get(n));
+        terem = String.valueOf(n);
         return terem;
     }
 }

@@ -13,15 +13,13 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
-
-public class SitPlaceSelectController implements Initializable {
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class SitPlaceSelectController    {
+public class SitPlaceSelectController implements Initializable {
+
     @FXML
     void BackToTimeSelectPushed(javafx.event.ActionEvent event) throws Exception {
         MainApp.order.setIdopont(null);
@@ -42,7 +40,6 @@ public class SitPlaceSelectController    {
                 str.append(";");
         }
         MainApp.order.setUlo_hely(str.toString());
-
 
         Parent Next_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
         Scene Meal_scene = new Scene(Next_to_Meal);
@@ -228,10 +225,7 @@ public class SitPlaceSelectController    {
             e.printStackTrace();
         }
     }
-    /*public void init()
-    {
 
-    }*/
 
 }
 

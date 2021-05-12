@@ -39,8 +39,10 @@ public class ENDSceneController implements Initializable {
         OrderDAO oDAO = new JpaOrderDAO();
 
         o_list = oDAO.getOrders();
+        if (o_list.size()!=0){
         Order order = o_list.get(o_list.size() - 1);
         sorszam.setText(String.valueOf(order.getId()));
+        }
 
         try {
             oDAO.close();
