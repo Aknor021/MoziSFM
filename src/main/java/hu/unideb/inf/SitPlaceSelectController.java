@@ -75,6 +75,8 @@ public class SitPlaceSelectController implements Initializable {
             if (!(Seat_list.contains(Seat))) {
                 Seat_list.add(Seat);
                 sitPlaceColor(Seat_list, 'g');
+                int tmp = Integer.parseInt(MainApp.order.getAr())+1000;
+                MainApp.order.setAr(String.valueOf(tmp));
 
             } else {
                 Seat_list.remove(Seat);
@@ -82,6 +84,8 @@ public class SitPlaceSelectController implements Initializable {
                 torolt.add(Seat);
                 sitPlaceColor(torolt, 'o');
                 torolt.clear();
+                int tmp = Integer.parseInt(MainApp.order.getAr())-1000;
+                MainApp.order.setAr(String.valueOf(tmp));
             }
         }
     }
