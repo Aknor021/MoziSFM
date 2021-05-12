@@ -16,7 +16,11 @@ public class Order {
     public String dp;
     public String idopont;
     public String etel_ital;
+    public String ar;
 
+    public void setAr(String ar) { this.ar = ar; }
+
+    public String getAr() { return ar; }
 
     public int getId() {
         return id;

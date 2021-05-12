@@ -16,6 +16,7 @@ import java.util.Objects;
 public class MealSelectController {
     static List<String> order_list=new ArrayList<>();
     public static List<String> order_list_DB=new ArrayList<>();
+    public static List<Integer> order_list_price=new ArrayList<>();
 
 
 
@@ -23,6 +24,7 @@ public class MealSelectController {
     public boolean ALL_Items_DEL() {
         order_list.clear();
         order_list_DB.clear();
+        order_list_price.clear();
         Orders_list.setText(String.valueOf(order_list));
         return true;
     }
@@ -35,6 +37,7 @@ public class MealSelectController {
         else {
             int last = order_list.size() - 1;
             order_list.remove(last);
+            order_list_price.remove(last);
             Orders_list.setText(String.valueOf(order_list));
             return true;
         }
@@ -63,7 +66,11 @@ public class MealSelectController {
                 str2.append(";");
         }
         MainApp.order.setEtel_ital(str2.toString());
-
+        int sum = 0;
+        for (int i : order_list_price) {
+            sum = sum + i;
+        }
+        MainApp.order.setAr(String.valueOf(sum));
 
         Parent Next_to_Summary = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Summary.fxml")));
         Scene Summary_Scene = new Scene(Next_to_Summary);
@@ -79,6 +86,7 @@ public class MealSelectController {
     void Cola_kicsi() {
         order_list.add("Cola kicsi\n");
         order_list_DB.add("c_s");
+        order_list_price.add(200);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -86,6 +94,7 @@ public class MealSelectController {
     void Cola_kozepes() {
         order_list.add("Cola közepes\n");
         order_list_DB.add("c_m");
+        order_list_price.add(350);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -93,6 +102,7 @@ public class MealSelectController {
     void Cola_nagy() {
         order_list.add("Cola Nagy\n");
         order_list_DB.add("c_l");
+        order_list_price.add(500);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -100,6 +110,7 @@ public class MealSelectController {
     void Fanta_kicsi() {
         order_list.add("Fanta kicsi\n");
         order_list_DB.add("f_s");
+        order_list_price.add(200);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -107,6 +118,7 @@ public class MealSelectController {
     void Fanta_kozepes() {
         order_list.add("Fanta közepes\n");
         order_list_DB.add("f_m");
+        order_list_price.add(350);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -114,6 +126,7 @@ public class MealSelectController {
     void Fanta_nagy() {
         order_list.add("Fanta nagy\n");
         order_list_DB.add("f_l");
+        order_list_price.add(500);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -121,6 +134,7 @@ public class MealSelectController {
     void Nachos_kicsi() {
         order_list.add("Nachos kicsi\n");
         order_list_DB.add("n_s");
+        order_list_price.add(500);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -128,6 +142,7 @@ public class MealSelectController {
     void Nachos_kozepes() {
         order_list.add("Nachos közepes\n");
         order_list_DB.add("n_m");
+        order_list_price.add(1000);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -135,6 +150,7 @@ public class MealSelectController {
     void Nachos_nagy() {
         order_list.add("Nachos nagy\n");
         order_list_DB.add("n_l");
+        order_list_price.add(1000);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -142,6 +158,7 @@ public class MealSelectController {
     void Popcorn_kicsi() {
         order_list.add("Popcorn kicsi\n");
         order_list_DB.add("p_s");
+        order_list_price.add(400);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -149,6 +166,7 @@ public class MealSelectController {
     void Popcorn_kozepes() {
         order_list.add("popcorn közepes\n");
         order_list_DB.add("p_m");
+        order_list_price.add(900);
         Orders_list.setText(String.valueOf(order_list));
     }
 
@@ -156,6 +174,7 @@ public class MealSelectController {
     void Popcorn_nagy() {
         order_list.add("Popcorn nagy\n");
         order_list_DB.add("p_l");
+        order_list_price.add(1400);
         Orders_list.setText(String.valueOf(order_list));
     }
 }

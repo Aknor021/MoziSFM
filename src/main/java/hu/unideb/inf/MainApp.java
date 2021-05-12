@@ -23,6 +23,7 @@ public class MainApp extends Application {
         order.setDp(null);
         order.setUlo_hely(null);
         order.setIdopont(null);
+        order.setAr(null);
 
     }
 
