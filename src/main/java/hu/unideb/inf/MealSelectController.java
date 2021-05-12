@@ -17,23 +17,28 @@ public class MealSelectController {
     static List<String> order_list=new ArrayList<>();
     public static List<String> order_list_DB=new ArrayList<>();
 
+
+
     @FXML
-    void ALL_Items_DEL() {
+    public boolean ALL_Items_DEL() {
         order_list.clear();
         order_list_DB.clear();
         Orders_list.setText(String.valueOf(order_list));
-
+        return true;
     }
     @FXML
-    void Last_item_DEL() {
+    boolean Last_item_DEL() {
         if (order_list.size()<1) {
             Orders_list.setText("Nincs elem");
+            return true;
         }
         else {
             int last = order_list.size() - 1;
             order_list.remove(last);
             Orders_list.setText(String.valueOf(order_list));
+            return true;
         }
+
     }
 
     @FXML

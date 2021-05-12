@@ -1,5 +1,10 @@
 package hu.unideb.inf;
 
+import hu.unideb.inf.MainApp;
+import hu.unideb.inf.Order;
+import hu.unideb.inf.SummaryController;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -36,7 +41,7 @@ class SummaryControllerTest {
     }
 
     @org.junit.jupiter.api.Test
-    void terem( ) {
+    void terem( )  {
         String expected = "1";
         String actual;
         actual = summaryController.Terem("Deadpool");

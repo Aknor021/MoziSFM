@@ -126,7 +126,7 @@ public class SummaryController implements Initializable{
     String terem;
     String film = MainApp.order.getFilm_cim();
 
-    String Terem(String film)
+    public String Terem(String film)
     {
         int n=0 ;
         switch (film){
