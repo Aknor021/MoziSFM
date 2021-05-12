@@ -13,30 +13,30 @@ class JpaOrderDAOTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown() {System.out.println("One test finished !");
     }
 
     @Test
-    void saveOrder() {
+    void saveOrder() {assert(true);
     }
 
     @Test
-    void deleteOrder() {
+    void deleteOrder() {assert(true);
     }
 
     @Test
-    void updateOrder() {
+    void updateOrder() {assert(true);
     }
 
     @Test
-    void getOrders() {
+    void getOrders() {assert(true);
     }
 
     @Test
-    void getFoglaltHelyek() {
+    void getFoglaltHelyek() {assert(true);
     }
 
     @Test
-    void close() {
+    void close() {assert(true);
     }
 }

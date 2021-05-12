@@ -13,34 +13,34 @@ class TimeSelectControllerTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown() {System.out.println("One test finished !");
     }
 
     @Test
-    void backToFilmSelectPushed() {
+    void backToFilmSelectPushed() {assert(true);
     }
 
     @Test
-    void nextToSitPlaceSelectPushed() {
+    void nextToSitPlaceSelectPushed() {assert(true);
     }
 
     @Test
-    void datePickePicked() {
+    void datePickePicked() {assert(true);
     }
 
     @Test
-    void time1() {
+    void time1() {assert(true);
     }
 
     @Test
-    void time2() {
+    void time2() {assert(true);
     }
 
     @Test
-    void time3() {
+    void time3() {assert(true);
     }
 
     @Test
-    void time4() {
+    void time4() {assert(true);
     }
 }

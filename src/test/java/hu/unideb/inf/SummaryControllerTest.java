@@ -30,15 +30,15 @@ class SummaryControllerTest {
     void after(){System.out.println("One test finished");}
 
     @org.junit.jupiter.api.Test
-    void backToMealPushed() {
+    void backToMealPushed() {assert(true);
     }
 
     @org.junit.jupiter.api.Test
-    void nextToEndScenePushed() {
+    void nextToEndScenePushed() {assert(true);
     }
 
     @org.junit.jupiter.api.Test
-    void initialize() {
+    void initialize() {assert(true);
     }
 
     @org.junit.jupiter.api.Test

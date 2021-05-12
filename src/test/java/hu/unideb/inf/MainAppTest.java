@@ -13,54 +13,54 @@ class MainAppTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown() {System.out.println("One test finished !");
     }
 
     @Test
-    void launch() {
+    void launch() {assert(true);
     }
 
     @Test
-    void testLaunch() {
+    void testLaunch() {assert(true);
     }
 
     @Test
-    void init() {
+    void init() {assert(true);
     }
 
     @Test
-    void stop() {
+    void stop() {assert(true);
     }
 
     @Test
-    void getHostServices() {
+    void getHostServices() {assert(true);
     }
 
     @Test
-    void getParameters() {
+    void getParameters() {assert(true);
     }
 
     @Test
-    void notifyPreloader() {
+    void notifyPreloader() {assert(true);
     }
 
     @Test
-    void getUserAgentStylesheet() {
+    void getUserAgentStylesheet() {assert(true);
     }
 
     @Test
-    void setUserAgentStylesheet() {
+    void setUserAgentStylesheet() {assert(true);
     }
 
     @Test
-    void newOrder() {
+    void newOrder() {assert(true);
     }
 
     @Test
-    void start() {
+    void start() {assert(true);
     }
 
     @Test
-    void main() {
+    void main() {assert(true);
     }
 }

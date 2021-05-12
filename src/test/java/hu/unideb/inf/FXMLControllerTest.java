@@ -16,13 +16,11 @@ class FXMLControllerTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown() {System.out.println("One test finished !");
     }
 
     @Test
     void changeScenePushed() {
-        boolean act = true;
-        boolean expected = true;
-        assertEquals(expected,act);
+        assert(true);
     }
 }

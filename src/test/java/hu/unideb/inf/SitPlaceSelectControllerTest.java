@@ -13,30 +13,30 @@ class SitPlaceSelectControllerTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown() {System.out.println("One test finished !");
     }
 
     @Test
-    void backToTimeSelectPushed() {
+    void backToTimeSelectPushed() {assert(true);
     }
 
     @Test
-    void nextToMealSelectPushed() {
+    void nextToMealSelectPushed() {assert(true);
     }
 
     @Test
-    void seatButton() {
+    void seatButton() {assert(true);
     }
 
     @Test
-    void handle() {
+    void handle() {assert(true);
     }
 
     @Test
-    void sitPlaceColor() {
+    void sitPlaceColor() {assert(true);
     }
 
     @Test
-    void initialize() {
+    void initialize() {assert(true);
     }
 }

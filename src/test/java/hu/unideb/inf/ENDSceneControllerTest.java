@@ -13,14 +13,16 @@ class ENDSceneControllerTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown() {System.out.println("One test finished !");
     }
 
     @Test
     void nextButtonPushed() {
+        assert(true);
     }
 
     @Test
     void initialize() {
+        assert(true);
     }
 }
