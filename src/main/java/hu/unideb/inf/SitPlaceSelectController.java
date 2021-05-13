@@ -69,7 +69,7 @@ public class SitPlaceSelectController implements Initializable {
     List<String> Seat_list = new ArrayList<>();
     String Seat;
 
-    int cnt =0;
+    public static int cnt =0;
     public void handle(ActionEvent actionEvent) {
         Seat = ((Control) actionEvent.getSource()).getId();
         if(!foglalt_helyek.contains(Seat))

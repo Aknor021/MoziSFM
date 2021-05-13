@@ -49,6 +49,7 @@ public class MealSelectController {
     @FXML
     void BackToSitPlacePushed(javafx.event.ActionEvent event) throws Exception {
         MainApp.order.setUlo_hely(null);
+        SitPlaceSelectController.cnt = 0;
 
         Parent Back_to_Sit_Place_Select= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Sit_Place_Select.fxml")));
         Scene Sit_Place_Select_scene = new Scene(Back_to_Sit_Place_Select);
@@ -56,6 +57,10 @@ public class MealSelectController {
         window.setScene(Sit_Place_Select_scene);
         window.show();
     }
+
+    public static int tmp;
+    public static int sum;
+
 
     @FXML
     void NextToSummaryPushed(ActionEvent event) throws Exception {
@@ -66,11 +71,11 @@ public class MealSelectController {
                 str2.append(";");
         }
         MainApp.order.setEtel_ital(str2.toString());
-        int sum = 0;
+        sum = 0;
         for (int i : order_list_price) {
             sum = sum + i;
         }
-        int tmp = MainApp.order.getAr()+sum;
+        tmp = MainApp.order.getAr()+sum;
         MainApp.order.setAr(tmp);
 
         Parent Next_to_Summary = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Summary.fxml")));

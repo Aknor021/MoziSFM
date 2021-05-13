@@ -41,6 +41,10 @@ public class SummaryController implements Initializable{
         MainApp.order.setEtel_ital(null);
         MealSelectController.order_list.clear();
         MealSelectController.order_list_DB.clear();
+
+        MealSelectController.tmp = MainApp.order.getAr() - MealSelectController.sum;
+        MealSelectController.sum = 0;
+        MainApp.order.setAr(MealSelectController.tmp);
         MealSelectController.order_list_price.clear();
 
         Parent Back_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
