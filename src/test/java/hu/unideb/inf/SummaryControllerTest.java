@@ -3,10 +3,7 @@ package hu.unideb.inf;
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.Order;
 import hu.unideb.inf.SummaryController;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -41,7 +38,7 @@ class SummaryControllerTest {
     void initialize() {assert(true);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void terem( )  {
         String expected = "1";
         String actual;

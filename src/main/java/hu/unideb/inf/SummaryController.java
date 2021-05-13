@@ -11,7 +11,10 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.*;
+import java.util.Map;
+import java.util.Objects;
+import java.util.ResourceBundle;
+import java.util.TreeMap;
 
 public class SummaryController implements Initializable{
 
@@ -31,10 +34,18 @@ public class SummaryController implements Initializable{
     private Label Seat_label;
 
     @FXML
+    private Label Price_label;
+
+    @FXML
     void BackToMealPushed(ActionEvent event) throws Exception {
         MainApp.order.setEtel_ital(null);
         MealSelectController.order_list.clear();
         MealSelectController.order_list_DB.clear();
+
+        MealSelectController.tmp = MainApp.order.getAr() - MealSelectController.sum;
+        MealSelectController.sum = 0;
+        MainApp.order.setAr(MealSelectController.tmp);
+        MealSelectController.order_list_price.clear();
 
         Parent Back_to_Meal = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Meal_Select.fxml")));
         Scene Meal_scene = new Scene(Back_to_Meal);
@@ -51,6 +62,7 @@ public class SummaryController implements Initializable{
 
         MealSelectController.order_list.clear();
         MealSelectController.order_list_DB.clear();
+        MealSelectController.order_list_price.clear();
 
         Parent Next_to_End = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/END_Scene.fxml")));
         Scene End_scene = new Scene(Next_to_End);
@@ -72,6 +84,8 @@ public class SummaryController implements Initializable{
         Time_label.setText(MainApp.order.getDp() + " " + MainApp.order.getIdopont());
 
         if (MealSelectController.order_list_DB.size() != 0) {
+            //Ár
+            Price_label.setText(String.valueOf(MainApp.order.getAr()));
             //Etel_ital
             String[] tomb = MainApp.order.getEtel_ital().split(";");
             StringBuilder meal = new StringBuilder();

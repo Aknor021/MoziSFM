@@ -24,6 +24,9 @@ public class ENDSceneController implements Initializable {
     @FXML
     void NextButtonPushed(ActionEvent event) throws IOException {
         MainApp.newOrder();
+        SitPlaceSelectController.cnt = 0;
+        MealSelectController.order_list_price.clear();
+
         Parent Next_to_Menu = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Menu.fxml")));
         Scene Menu_Scene = new Scene(Next_to_Menu);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
