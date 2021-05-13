@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.MealSelectController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.MealSelectController">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1080.0" styleClass="Anchor">
          <children>
@@ -84,62 +91,62 @@
                   <Button mnemonicParsing="false" onAction="#Nachos_kicsi" prefHeight="10.0" prefWidth="80.0" styleClass="button2" text="Kicsi" GridPane.rowIndex="12" />
                   <Button mnemonicParsing="false" onAction="#Nachos_kozepes" prefHeight="10.0" prefWidth="80.0" styleClass="button2" text="Közepes" GridPane.rowIndex="13" />
                   <Button mnemonicParsing="false" onAction="#Nachos_nagy" prefHeight="10.0" prefWidth="80.0" styleClass="button2" text="Nagy" GridPane.rowIndex="14" />
-                  <Label text="200Ft" textFill="WHITE" GridPane.columnIndex="1">
+                  <Label id="textura" text="200Ft" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="1400Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                  <Label id="textura" text="1400Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="900Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                  <Label id="textura" text="900Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="400Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                  <Label id="textura" text="400Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <Label id="textura" text="500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="350Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <Label id="textura" text="350Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="200Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Label id="textura" text="200Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label id="textura" text="500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="350Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label id="textura" text="350Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="1500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                  <Label id="textura" text="1500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="1000Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                  <Label id="textura" text="1000Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="13">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                  <Label id="textura" text="500Ft" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
                      <font>
                         <Font size="14.0" />
                      </font>

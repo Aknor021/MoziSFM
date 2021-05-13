@@ -81,7 +81,7 @@ public class SummaryController implements Initializable{
 
         if (MealSelectController.order_list_DB.size() != 0) {
             //Ár
-            Price_label.setText(MainApp.order.getAr());
+            Price_label.setText(String.valueOf(MainApp.order.getAr()));
             //Etel_ital
             String[] tomb = MainApp.order.getEtel_ital().split(";");
             StringBuilder meal = new StringBuilder();

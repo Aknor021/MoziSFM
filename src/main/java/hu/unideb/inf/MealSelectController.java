@@ -70,7 +70,8 @@ public class MealSelectController {
         for (int i : order_list_price) {
             sum = sum + i;
         }
-        MainApp.order.setAr(String.valueOf(sum));
+        int tmp = MainApp.order.getAr()+sum;
+        MainApp.order.setAr(tmp);
 
         Parent Next_to_Summary = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Summary.fxml")));
         Scene Summary_Scene = new Scene(Next_to_Summary);

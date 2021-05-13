@@ -33,6 +33,7 @@ public class SitPlaceSelectController implements Initializable {
 
     @FXML
     void NextToMealSelectPushed(ActionEvent event) throws Exception {
+        arhoz_adas(cnt);
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < Seat_list.size(); i++) {
             str.append(Seat_list.get(i));
@@ -68,6 +69,7 @@ public class SitPlaceSelectController implements Initializable {
     List<String> Seat_list = new ArrayList<>();
     String Seat;
 
+    int cnt =0;
     public void handle(ActionEvent actionEvent) {
         Seat = ((Control) actionEvent.getSource()).getId();
         if(!foglalt_helyek.contains(Seat))
@@ -75,8 +77,7 @@ public class SitPlaceSelectController implements Initializable {
             if (!(Seat_list.contains(Seat))) {
                 Seat_list.add(Seat);
                 sitPlaceColor(Seat_list, 'g');
-                int tmp = Integer.parseInt(MainApp.order.getAr())+1000;
-                MainApp.order.setAr(String.valueOf(tmp));
+                cnt ++;
 
             } else {
                 Seat_list.remove(Seat);
@@ -84,11 +85,15 @@ public class SitPlaceSelectController implements Initializable {
                 torolt.add(Seat);
                 sitPlaceColor(torolt, 'o');
                 torolt.clear();
-                int tmp = Integer.parseInt(MainApp.order.getAr())-1000;
-                MainApp.order.setAr(String.valueOf(tmp));
+                cnt--;
             }
         }
     }
+    void arhoz_adas(int cnt){
+        int tmp = cnt *1000;
+        //MainApp.order.getAr()+1000;
+        MainApp.order.setAr(tmp);
+        }
 
     public void sitPlaceColor(List<String> helyek, char c) {
         String style = null;
